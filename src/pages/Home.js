@@ -1,7 +1,10 @@
 import React from "react";
 import "../styles/Home.css";
+import { getmatch } from "../services/apiFootballServices.js";
 
+  
 function Home() {
+  getmatch()
   return (
     <div>
       <div className="home-container">
