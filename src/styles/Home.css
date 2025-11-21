@@ -1,0 +1,28 @@
+.home-container{
+    height: 50em;
+    display: grid;
+    padding: 100px;
+    grid-template-columns: repeat(3, 1fr); /* 3 sütun */
+    gap: 16px;
+}
+
+.box {
+  padding: 20px;
+  text-align: left;
+  border-radius: 10px;
+  height: 100%;
+  color: #F4F4F4;
+}
+
+#live-score{
+    background-color: #1D546C;
+}
+
+#league-tablo{
+
+    background-color: #1D546C;
+}
+
+#fikstur{
+    background-color: #1D546C;
+}

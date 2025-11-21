@@ -1,0 +1,29 @@
+.navbar-container{
+    display: flex;
+    gap: 100px;
+    background-color:#1A3D64;
+}
+.title{
+    color: #F4F4F4;
+    margin-left: 100px;
+    font-family: font-sans;
+    padding: 10px;
+}
+
+.button-container{
+    height: 100%;
+}
+
+.button-container button{
+    background-color: #1A3D64;
+    color: #F4F4F4;
+    border: none;
+    margin-left: 2px;
+    height: 100px;
+    width: 100px;
+    font-size: medium
+}
+.button-container button:hover{
+    background-color: #1e4d83;
+    color: rgb(112, 179, 11);
+}
