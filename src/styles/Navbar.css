@@ -1,29 +1,96 @@
-.navbar-container{
-    display: flex;
-    gap: 100px;
-    background-color:#1A3D64;
-}
-.title{
-    color: #F4F4F4;
-    margin-left: 100px;
-    font-family: font-sans;
-    padding: 10px;
-}
-
-.button-container{
-    height: 100%;
+/* NAVBAR GENEL */
+.nabvars {
+  width: 100%;
+  background-color: #0f172a;
+  height: 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+  border: 0.5mm solid #334155;
+  border-top: none;
 }
 
-.button-container button{
-    background-color: #1A3D64;
-    color: #F4F4F4;
-    border: none;
-    margin-left: 2px;
-    height: 100px;
-    width: 100px;
-    font-size: medium
+.navbar-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  gap: 50px;
 }
-.button-container button:hover{
-    background-color: #1e4d83;
-    color: rgb(112, 179, 11);
+
+.row-navbar-btn {
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.title {
+  margin-left: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* SIDEBAR ------------------------ */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 260px;
+  height: 100%;
+  background-color: #0f172a;
+  padding: 20px;
+  transition: 0.3s ease;
+  z-index: 200;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+.sideTitle {
+  color: white;
+  margin: 50px 0 20px;
+  font-size: 22px;
+}
+
+.sideItem {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background-color: #0f172a;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.sideItem:hover {
+  background-color: rgb(16, 40, 52);
+  border: 1px solid rgb(34, 58, 70);
+}
+
+/* ARKA PLAN KARARTMA */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 150;
 }

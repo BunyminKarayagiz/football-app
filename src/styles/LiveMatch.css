@@ -1,0 +1,90 @@
+/* LiveMatch.css */
+
+.match-cards {
+    flex: 0 0 auto; 
+
+    width: 280px; 
+    height: 160px; /* Sabit yükseklik vermek tasarımı toplu tutar */
+
+    /* Görsel Tasarım */
+    background-color: rgb(21, 32, 50); /* Tasarımındaki kart rengi */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Çok hafif bir çerçeve */
+    border-radius: 16px;
+    /* İçerik düzeni */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+    
+    /* Scroll Snap Hizalaması */
+    scroll-snap-align: start; /* Scroll durduğunda kart başa hizalanır */
+    
+    /* Hafif gölge ve geçiş efekti */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+    color: #F0F0F0; /* Yazı rengi */
+}
+
+.match-cards:hover {
+    transform: translateY(-5px); /* Mouse ile üzerine gelince hafif yukarı kalkar */
+    border-color: #8A2BE2; /* Kenarlık mor olur */
+}
+
+/* Lig ve Süre Bilgisi */
+.leauge-info-and-time {
+    display: flex;
+    justify-content: space-between; /* Kenarlara yasla */
+    align-items: center;
+    font-size: 0.8rem;
+    color: #B0B0B0; /* Daha silik yazı */
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 8px;
+}
+
+.country-logo {
+    height: 20px;
+    width: auto;
+}
+
+/* Takımlar ve Skor Alanı */
+.match-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 35%; /* İsimlerin sığması için alan */
+    text-align: center;
+}
+
+.team-info p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 5px;
+    /* Uzun takım isimleri için ... koyma (truncate) */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.team-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); /* Logolara derinlik */
+}
+
+.score-info {
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 8px;
+}

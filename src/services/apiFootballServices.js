@@ -17,7 +17,7 @@ export async function getLeagues(){
 };
 
 
-export async function getmatch(){
+export async function getMatchs(){
     const datas=[]
     try{
         const response = await fetch("https://v3.football.api-sports.io/fixtures?live=all", {
@@ -27,7 +27,6 @@ export async function getmatch(){
             }
         });
         const data = await response.json();
-        console.log(data.response)
 
         data.response.forEach(element => {
 
@@ -53,9 +52,9 @@ export async function getmatch(){
                 "league_logo":element.league.flag
             }
         }
-        console.log(veri)
-            datas.push(veri)
+        datas.push(veri)
         });
+        return datas
     }catch(error){
         console.log("Error while get leagues", error)
     }
