@@ -6711,3 +6711,317 @@ export const xxx=[
     }
 
 ]
+
+
+
+export const ranks=[
+    {
+        "teams": {
+            "id": 50,
+            "rank": 1,
+            "name": "Manchester City",
+            "logo": "https://media.api-sports.io/football/teams/50.png",
+            "points": 91,
+            "goalsdiff": 62,
+            "form": "WWWWW",
+            "played": 38,
+            "win": 28,
+            "draw": 7,
+            "lose": 3
+        }
+    },
+    {
+        "teams": {
+            "id": 42,
+            "rank": 2,
+            "name": "Arsenal",
+            "logo": "https://media.api-sports.io/football/teams/42.png",
+            "points": 89,
+            "goalsdiff": 62,
+            "form": "WWWWW",
+            "played": 38,
+            "win": 28,
+            "draw": 5,
+            "lose": 5
+        }
+    },
+    {
+        "teams": {
+            "id": 40,
+            "rank": 3,
+            "name": "Liverpool",
+            "logo": "https://media.api-sports.io/football/teams/40.png",
+            "points": 82,
+            "goalsdiff": 45,
+            "form": "WDWDL",
+            "played": 38,
+            "win": 24,
+            "draw": 10,
+            "lose": 4
+        }
+    },
+    {
+        "teams": {
+            "id": 66,
+            "rank": 4,
+            "name": "Aston Villa",
+            "logo": "https://media.api-sports.io/football/teams/66.png",
+            "points": 68,
+            "goalsdiff": 15,
+            "form": "LDLDW",
+            "played": 38,
+            "win": 20,
+            "draw": 8,
+            "lose": 10
+        }
+    },
+    {
+        "teams": {
+            "id": 47,
+            "rank": 5,
+            "name": "Tottenham",
+            "logo": "https://media.api-sports.io/football/teams/47.png",
+            "points": 66,
+            "goalsdiff": 13,
+            "form": "WLWLL",
+            "played": 38,
+            "win": 20,
+            "draw": 6,
+            "lose": 12
+        }
+    },
+    {
+        "teams": {
+            "id": 49,
+            "rank": 6,
+            "name": "Chelsea",
+            "logo": "https://media.api-sports.io/football/teams/49.png",
+            "points": 63,
+            "goalsdiff": 14,
+            "form": "WWWWW",
+            "played": 38,
+            "win": 18,
+            "draw": 9,
+            "lose": 11
+        }
+    },
+    {
+        "teams": {
+            "id": 34,
+            "rank": 7,
+            "name": "Newcastle",
+            "logo": "https://media.api-sports.io/football/teams/34.png",
+            "points": 60,
+            "goalsdiff": 23,
+            "form": "WLDWW",
+            "played": 38,
+            "win": 18,
+            "draw": 6,
+            "lose": 14
+        }
+    },
+    {
+        "teams": {
+            "id": 33,
+            "rank": 8,
+            "name": "Manchester United",
+            "logo": "https://media.api-sports.io/football/teams/33.png",
+            "points": 60,
+            "goalsdiff": -1,
+            "form": "WWLLD",
+            "played": 38,
+            "win": 18,
+            "draw": 6,
+            "lose": 14
+        }
+    },
+    {
+        "teams": {
+            "id": 48,
+            "rank": 9,
+            "name": "West Ham",
+            "logo": "https://media.api-sports.io/football/teams/48.png",
+            "points": 52,
+            "goalsdiff": -14,
+            "form": "LWLDL",
+            "played": 38,
+            "win": 14,
+            "draw": 10,
+            "lose": 14
+        }
+    },
+    {
+        "teams": {
+            "id": 52,
+            "rank": 10,
+            "name": "Crystal Palace",
+            "logo": "https://media.api-sports.io/football/teams/52.png",
+            "points": 49,
+            "goalsdiff": -1,
+            "form": "WWWDW",
+            "played": 38,
+            "win": 13,
+            "draw": 10,
+            "lose": 15
+        }
+    },
+    {
+        "teams": {
+            "id": 51,
+            "rank": 11,
+            "name": "Brighton",
+            "logo": "https://media.api-sports.io/football/teams/51.png",
+            "points": 48,
+            "goalsdiff": -7,
+            "form": "LLDWL",
+            "played": 38,
+            "win": 12,
+            "draw": 12,
+            "lose": 14
+        }
+    },
+    {
+        "teams": {
+            "id": 35,
+            "rank": 12,
+            "name": "Bournemouth",
+            "logo": "https://media.api-sports.io/football/teams/35.png",
+            "points": 48,
+            "goalsdiff": -13,
+            "form": "LLLWW",
+            "played": 38,
+            "win": 13,
+            "draw": 9,
+            "lose": 16
+        }
+    },
+    {
+        "teams": {
+            "id": 36,
+            "rank": 13,
+            "name": "Fulham",
+            "logo": "https://media.api-sports.io/football/teams/36.png",
+            "points": 47,
+            "goalsdiff": -6,
+            "form": "WLDDL",
+            "played": 38,
+            "win": 13,
+            "draw": 8,
+            "lose": 17
+        }
+    },
+    {
+        "teams": {
+            "id": 39,
+            "rank": 14,
+            "name": "Wolves",
+            "logo": "https://media.api-sports.io/football/teams/39.png",
+            "points": 46,
+            "goalsdiff": -15,
+            "form": "LLLWL",
+            "played": 38,
+            "win": 13,
+            "draw": 7,
+            "lose": 18
+        }
+    },
+    {
+        "teams": {
+            "id": 45,
+            "rank": 15,
+            "name": "Everton",
+            "logo": "https://media.api-sports.io/football/teams/45.png",
+            "points": 40,
+            "goalsdiff": -11,
+            "form": "LWDWW",
+            "played": 38,
+            "win": 13,
+            "draw": 9,
+            "lose": 16
+        }
+    },
+    {
+        "teams": {
+            "id": 55,
+            "rank": 16,
+            "name": "Brentford",
+            "logo": "https://media.api-sports.io/football/teams/55.png",
+            "points": 39,
+            "goalsdiff": -9,
+            "form": "LWDLW",
+            "played": 38,
+            "win": 10,
+            "draw": 9,
+            "lose": 19
+        }
+    },
+    {
+        "teams": {
+            "id": 65,
+            "rank": 17,
+            "name": "Nottingham Forest",
+            "logo": "https://media.api-sports.io/football/teams/65.png",
+            "points": 32,
+            "goalsdiff": -18,
+            "form": "WLWLL",
+            "played": 38,
+            "win": 9,
+            "draw": 9,
+            "lose": 20
+        }
+    },
+    {
+        "teams": {
+            "id": 1359,
+            "rank": 18,
+            "name": "Luton",
+            "logo": "https://media.api-sports.io/football/teams/1359.png",
+            "points": 26,
+            "goalsdiff": -33,
+            "form": "LLDLL",
+            "played": 38,
+            "win": 6,
+            "draw": 8,
+            "lose": 24
+        }
+    },
+    {
+        "teams": {
+            "id": 44,
+            "rank": 19,
+            "name": "Burnley",
+            "logo": "https://media.api-sports.io/football/teams/44.png",
+            "points": 24,
+            "goalsdiff": -37,
+            "form": "LLLDW",
+            "played": 38,
+            "win": 5,
+            "draw": 9,
+            "lose": 24
+        }
+    },
+    {
+        "teams": {
+            "id": 62,
+            "rank": 20,
+            "name": "Sheffield Utd",
+            "logo": "https://media.api-sports.io/football/teams/62.png",
+            "points": 16,
+            "goalsdiff": -69,
+            "form": "LLLLL",
+            "played": 38,
+            "win": 3,
+            "draw": 7,
+            "lose": 28
+        }
+    }
+]
+
+
+export const league_info={
+    "id": 39,
+    "league_name": "Premier League",
+    "country": "England",
+    "logo": "https://media.api-sports.io/football/leagues/39.png",
+    "season": 2023
+}

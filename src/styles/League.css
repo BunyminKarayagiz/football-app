@@ -1,0 +1,64 @@
+.league-container{
+    height: 100em;
+    overflow-x: auto;
+    border: 0.5mm solid rgb(52,65,84);
+    width: 190vh;
+    border-radius: 30px;
+    padding: 20px 10px 20px 10px;  
+    background-color: rgb(21, 32, 50);
+    --sb-track-color: rgb(30,41,59);
+    --sb-thumb-color: rgb(52,65,84);
+    --sb-size: 9px;
+}
+.league-container::-webkit-scrollbar {
+  width: var(--sb-size);
+
+}
+
+.league-container::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+  
+}
+
+.league-container::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+.teams-info-container{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr); /* 9 adet eşit sütun */
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 0.5mm solid rgb(52,65,84);
+}
+
+
+.type-container {
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr); /* 9 adet eşit sütun */
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(19, 27, 46);
+    color: rgb(89, 97, 110);
+}
+.league-info h2{
+
+    margin-left: 20px;
+}
+
+.name-img-container{
+    padding: 3px;
+}
+.name-img-container img{
+    max-height: 50px;
+       height: 100%;
+}
+
+.scores{
+    color: rgb(142, 165, 183);
+    font-size: 1.2rem;
+}
