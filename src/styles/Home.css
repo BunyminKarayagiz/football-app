@@ -1,14 +1,36 @@
 .home-container{
     display: grid;
-    padding: 50px;
-    gap: 30px;
 }
 
 .box {
-  padding: 20px;
+  position: relative ;
   text-align: left;
   border-radius: 10px;
-  height: 100%;
   color: #F4F4F4;
+  padding-left: 200px;
+  padding-top: 50px;
+}
+
+.fixture-tite-container{
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+
+.fixture-tite-container select{
+  border: none;
+  border-radius: 30px;
+  height: 40px;
+  text-align: center;
   padding: 10px;
+}
+
+.fixture-tite-container option{
+  border: none;
+  border-radius: 30px;
+}
+
+select,::picker(select) {
+  appearance: base-select;
 }

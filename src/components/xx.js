@@ -7025,3 +7025,257 @@ export const league_info={
     "logo": "https://media.api-sports.io/football/leagues/39.png",
     "season": 2023
 }
+
+
+export const xxfixture=[
+    {
+        "league": {
+            "name": "Premier League",
+            "id": 39,
+            "logo": "https://media.api-sports.io/football/leagues/39.png"
+        },
+        "fixture": {
+            "id": 1035299,
+            "date": "2023-11-25T12:30:00+00:00",
+            "time": 1700915400,
+            "ref": "C. Kavanagh",
+            "stadium": "Etihad Stadium",
+            "city": "Manchester"
+        },
+        "homeTeam": {
+            "id": 50,
+            "name": "Manchester City",
+            "logo": "https://media.api-sports.io/football/teams/50.png"
+        },
+        "awayTeam": {
+            "id": 40,
+            "name": 40,
+            "logo": 40
+        }
+    },
+    {
+        "league": {
+            "name": "Premier League",
+            "id": 39,
+            "logo": "https://media.api-sports.io/football/leagues/39.png"
+        },
+        "fixture": {
+            "id": 1035300,
+            "date": "2023-11-25T15:00:00+00:00",
+            "time": 1700924400,
+            "ref": "S. Hooper",
+            "stadium": "St. James' Park",
+            "city": "Newcastle upon Tyne"
+        },
+        "homeTeam": {
+            "id": 34,
+            "name": "Newcastle",
+            "logo": "https://media.api-sports.io/football/teams/34.png"
+        },
+        "awayTeam": {
+            "id": 49,
+            "name": 49,
+            "logo": 49
+        }
+    },
+    {
+        "league": {
+            "name": "Premier League",
+            "id": 39,
+            "logo": "https://media.api-sports.io/football/leagues/39.png"
+        },
+        "fixture": {
+            "id": 1035295,
+            "date": "2023-11-25T15:00:00+00:00",
+            "time": 1700924400,
+            "ref": "S. Barrott",
+            "stadium": "Turf Moor",
+            "city": "Burnley"
+        },
+        "homeTeam": {
+            "id": 44,
+            "name": "Burnley",
+            "logo": "https://media.api-sports.io/football/teams/44.png"
+        },
+        "awayTeam": {
+            "id": 48,
+            "name": 48,
+            "logo": 48
+        }
+    },
+    {
+        "league": {
+            "name": "Premier League",
+            "id": 39,
+            "logo": "https://media.api-sports.io/football/leagues/39.png"
+        },
+        "fixture": {
+            "id": 1035302,
+            "date": "2023-11-25T15:00:00+00:00",
+            "time": 1700924400,
+            "ref": "A. Madley",
+            "stadium": "Bramall Lane",
+            "city": "Sheffield"
+        },
+        "homeTeam": {
+            "id": 62,
+            "name": "Sheffield Utd",
+            "logo": "https://media.api-sports.io/football/teams/62.png"
+        },
+        "awayTeam": {
+            "id": 35,
+            "name": 35,
+            "logo": 35
+        }
+    },
+    {
+        "league": {
+            "name": "Premier League",
+            "id": 39,
+            "logo": "https://media.api-sports.io/football/leagues/39.png"
+        },
+        "fixture": {
+            "id": 1035301,
+            "date": "2023-11-25T15:00:00+00:00",
+            "time": 1700924400,
+            "ref": "A. Taylor",
+            "stadium": "The City Ground",
+            "city": "Nottingham, Nottinghamshire"
+        },
+        "homeTeam": {
+            "id": 65,
+            "name": "Nottingham Forest",
+            "logo": "https://media.api-sports.io/football/teams/65.png"
+        },
+        "awayTeam": {
+            "id": 51,
+            "name": 51,
+            "logo": 51
+        }
+    },
+    {
+        "league": {
+            "name": "Premier League",
+            "id": 39,
+            "logo": "https://media.api-sports.io/football/leagues/39.png"
+        },
+        "fixture": {
+            "id": 1035298,
+            "date": "2023-11-25T15:00:00+00:00",
+            "time": 1700924400,
+            "ref": "J. Gillett",
+            "stadium": "Kenilworth Road",
+            "city": "Luton, Bedfordshire"
+        },
+        "homeTeam": {
+            "id": 1359,
+            "name": "Luton",
+            "logo": "https://media.api-sports.io/football/teams/1359.png"
+        },
+        "awayTeam": {
+            "id": 52,
+            "name": 52,
+            "logo": 52
+        }
+    },
+    {
+        "league": {
+            "name": "Premier League",
+            "id": 39,
+            "logo": "https://media.api-sports.io/football/leagues/39.png"
+        },
+        "fixture": {
+            "id": 1035294,
+            "date": "2023-11-25T17:30:00+00:00",
+            "time": 1700933400,
+            "ref": "T. Robinson",
+            "stadium": "Gtech Community Stadium",
+            "city": "Brentford, Middlesex"
+        },
+        "homeTeam": {
+            "id": 55,
+            "name": "Brentford",
+            "logo": "https://media.api-sports.io/football/teams/55.png"
+        },
+        "awayTeam": {
+            "id": 42,
+            "name": 42,
+            "logo": 42
+        }
+    },
+    {
+        "league": {
+            "name": "Premier League",
+            "id": 39,
+            "logo": "https://media.api-sports.io/football/leagues/39.png"
+        },
+        "fixture": {
+            "id": 1035303,
+            "date": "2023-11-26T14:00:00+00:00",
+            "time": 1701007200,
+            "ref": "R. Jones",
+            "stadium": "Tottenham Hotspur Stadium",
+            "city": "London"
+        },
+        "homeTeam": {
+            "id": 47,
+            "name": "Tottenham",
+            "logo": "https://media.api-sports.io/football/teams/47.png"
+        },
+        "awayTeam": {
+            "id": 66,
+            "name": 66,
+            "logo": 66
+        }
+    },
+    {
+        "league": {
+            "name": "Premier League",
+            "id": 39,
+            "logo": "https://media.api-sports.io/football/leagues/39.png"
+        },
+        "fixture": {
+            "id": 1035296,
+            "date": "2023-11-26T16:30:00+00:00",
+            "time": 1701016200,
+            "ref": "J. Brooks",
+            "stadium": "Goodison Park",
+            "city": "Liverpool"
+        },
+        "homeTeam": {
+            "id": 45,
+            "name": "Everton",
+            "logo": "https://media.api-sports.io/football/teams/45.png"
+        },
+        "awayTeam": {
+            "id": 33,
+            "name": 33,
+            "logo": 33
+        }
+    },
+    {
+        "league": {
+            "name": "Premier League",
+            "id": 39,
+            "logo": "https://media.api-sports.io/football/leagues/39.png"
+        },
+        "fixture": {
+            "id": 1035297,
+            "date": "2023-11-27T20:00:00+00:00",
+            "time": 1701115200,
+            "ref": "M. Salisbury",
+            "stadium": "Craven Cottage",
+            "city": "London"
+        },
+        "homeTeam": {
+            "id": 36,
+            "name": "Fulham",
+            "logo": "https://media.api-sports.io/football/teams/36.png"
+        },
+        "awayTeam": {
+            "id": 39,
+            "name": 39,
+            "logo": 39
+        }
+    }
+]

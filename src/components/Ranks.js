@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/League.css";
+import FormDisplay from "./FormDisplay";
 
 function Ranks({ teams = [], league_info = {} }) {
   return (
@@ -19,7 +20,7 @@ function Ranks({ teams = [], league_info = {} }) {
       <p className="scores">{teams.teams.lose}</p>
       <p className="scores">{teams.teams.goalsdiff}</p>
       <p className="scores">{teams.teams.points}</p>
-      <p className="scores">{teams.teams.form}</p>
+      <FormDisplay form={teams.teams.form} />
     </div>
   );
 }

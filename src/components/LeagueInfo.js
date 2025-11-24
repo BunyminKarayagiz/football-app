@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Ranks from "./Ranks";
 import { league_info, ranks } from "./xx";
 import "../styles/League.css";
+
 function LeagueInfo() {
   const [leagueInfo, setLeagueInfo] = useState({});
   const [teams, setTeams] = useState([]);
@@ -14,12 +15,12 @@ function LeagueInfo() {
 
     setTeams(ranks);
     setLeagueInfo(league_info);
-    console.log(league_info)
   }, []);
   return (
     <div className="league-container">
       <div className="league-info">
         <h2>{leagueInfo.league_name}</h2>
+        <h3>{leagueInfo.country}</h3>
         <div className="type-container">
             <p>#</p>
             <p>TEAM</p>
