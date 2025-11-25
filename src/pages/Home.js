@@ -13,35 +13,37 @@ function Home() {
   //console.log(data[1]);
   //});
   //getLeaugue(39,2023)
+  console.log(selectedLeague)
   return (
     <div className="home-container">
-      <div className="box" id="live-score">
-        <h1>Live Scores</h1>
-        <LiveScores />
+      <div className="live-fixture-container">
+        <div className="box" id="live-score">
+          <h1>Live Scores</h1>
+          <LiveScores />
+        </div>
+        <div className="box" id="fixture">
+          <div className="fixture-tite-container">
+            <h1>Fixture</h1>
+
+            <select
+              value={selectedLeague}
+              onChange={(e) => setSelectedLeague(Number(e.target.value))}
+            >
+              {topLeagues.map((league) => (
+                <option key={league.id} value={league.id}>
+                  {league.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <Fixtures selectedLeague={selectedLeague} />
+        </div>
       </div>
 
       <div className="box" id="league-tablo">
         <h1>League Table</h1>
         <LeagueInfo />
-      </div>
-
-      <div className="box" id="fikstur">
-
-        <div className="fixture-tite-container">
-          <h1>Fixture</h1>
-          <select
-            value={selectedLeague}
-            onChange={(e) => setSelectedLeague(Number(e.target.value))}
-          >
-            {topLeagues.map((league) => (
-              <option key={league.id} value={league.id}>
-                {league.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <Fixtures selectedLeague={selectedLeague} />
       </div>
     </div>
   );

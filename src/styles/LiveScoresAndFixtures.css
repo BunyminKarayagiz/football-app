@@ -1,0 +1,96 @@
+.match-container {
+    display: flex;
+    gap: 20px;  
+    width: 85vh;
+    overflow-x: auto; /* İçerik taşarsa scroll açar */
+    white-space: nowrap;
+    padding: 50px 50px 20px 30px;
+    border: 0.5mm solid rgb(52,65,84);
+    border-radius: 30px;
+    height: auto; /* Yükseklik içeriğe göre belirlensin */
+}
+
+.match-container {
+  --sb-track-color: rgb(30,41,59);
+  --sb-thumb-color: rgb(52,65,84);
+  --sb-size: 9px;
+}
+
+.match-container::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+.match-container::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+.match-container::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+  
+}
+.fixtures-list{
+    border: 0.5mm solid rgb(52,65,84);
+    border-radius: 30px;
+    padding: 20px;
+    height: 300px;
+    overflow-x: auto; /* İçerik taşarsa scroll açar */
+    white-space: nowrap;
+}
+
+.fixtures-list {
+  --sb-track-color: rgb(30,41,59);
+  --sb-thumb-color: rgb(52,65,84);
+  --sb-size: 9px;
+}
+
+.fixtures-list::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+.fixtures-list::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+.fixtures-list::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+  
+}
+
+.fixture-team-container{
+  margin-left: 10px;
+}
+
+.fixture{
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+.fixture-team{
+  display: flex;
+  padding-left: 20px;
+  gap: 10px;
+  width: 200px;
+  border: 0.5mm solid rgb(52,65,84);
+  border-top: none;
+  border-bottom: none;
+}
+
+.fixture-info-icons{
+  display: grid;
+  background-color: rgb(19, 27, 46);
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 30px;
+}
+.fixture-info-icons p{
+  margin-left: 50px;
+}
+
+.ref-stad{
+  display: flex;
+  gap: 20px;
+}

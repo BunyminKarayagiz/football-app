@@ -229,8 +229,8 @@ export async function getFixturesByLeague(leagueId) {
         },
                 "awayTeam":{
             "id":element.teams.away.id,
-            "name":element.teams.away.id,
-            "logo":element.teams.away.id,
+            "name":element.teams.away.name,
+            "logo":element.teams.away.logo,
 
         }
     }

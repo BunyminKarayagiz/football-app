@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 //import { getMatchs } from "../services/apiFootballServices";
 import LiveMatch from "./LiveMatch";
-import "../styles/LiveScores.css"
+import "../styles/LiveScoresAndFixtures.css"
 import {xxx} from "./xx.js"
 
 function LiveScores() {
