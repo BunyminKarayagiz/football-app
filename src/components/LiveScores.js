@@ -3,18 +3,18 @@ import React, { useEffect, useState } from "react";
 import LiveMatch from "./LiveMatch";
 import "../styles/LiveScoresAndFixtures.css"
 import {xxx} from "./xx.js"
+//import {topLeagues_str} from "../services/apiFootballServices.js"
 
 function LiveScores() {
   const [matchs_item, setMatch] = useState([]);
 
   useEffect(() => {
     
-    //getMatchs().then((matchs) => {
-    //    console.log(matchs)
+    //getMatchs(topLeagues_str).then((matchs) => {
     //  setMatch(matchs);
+    //  //console.log(matchs)
     //});
     setMatch(xxx)
-
   }, []);
   return(
     <div className="poem">

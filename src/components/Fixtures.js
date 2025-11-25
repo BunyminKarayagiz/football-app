@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-//import { getFixturesByLeague } from '../services/apiFootballServices'; // API çağrı fonksiyonu
+//import { getFixturesByLeague } from "../services/apiFootballServices"; // API çağrı fonksiyonu
 import { xxfixture } from "./xx";
 import "../styles/LiveScoresAndFixtures.css";
 import { MdOutlineDateRange } from "react-icons/md";
@@ -12,13 +12,12 @@ function Fixtures({ selectedLeague }) {
   const [fixtures, setFixtures] = useState([]);
 
   useEffect(() => {
-    //const fetchFixtures = async () => {
-    //  const data = await getFixturesByLeague(selectedLeague);
-    //  setFixtures(data);
-    //};
-    //fetchFixtures();
+    //  const fetchFixtures = async () => {
+    //    const data = await getFixturesByLeague(selectedLeague);
+    //    setFixtures(data);
+    //  };
+    //  fetchFixtures();
     setFixtures(xxfixture);
-
   }, [selectedLeague]);
 
   return (
@@ -81,11 +80,15 @@ function Fixtures({ selectedLeague }) {
             <div className="fixture-ref-stad">
               <div className="ref-stad">
                 <p>{match.fixture.ref}</p>
-                <p><GiWhistle /></p>
+                <p>
+                  <GiWhistle />
+                </p>
               </div>
               <div className="ref-stad">
                 <p>{match.fixture.stadium}</p>
-                <p><MdStadium /></p>
+                <p>
+                  <MdStadium />
+                </p>
               </div>
             </div>
           </div>

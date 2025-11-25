@@ -1,31 +1,80 @@
-//const topLeagues_str = "39-140-135-78-61-848-93-94-103-3-125-126-127-128-129-132-531-150-2-157-206";
+export const topLeagues_str =
+  "39-140-78-61-135-253-203-94-91-235-145-106-333-307";
 
 export const topLeagues = [
-  { id: 39, name: "Premier League" },
-  { id: 140, name: "La Liga" },
-  { id: 78, name: "Bundesliga" },
-  { id: 61, name: "Ligue 1 (Fransa)" },
-  { id: 135, name: "Serie A (İtalya)" },
-  { id: 103, name: "Brasileirao Serie A (Brezilya)" },
-  { id: 50, name: "Major League Soccer (ABD)" },
-  { id: 93, name: "Süper Lig (Türkiye)" },
-  { id: 94, name: "Primeira Liga (Portekiz)" },
+  {
+    id: 39,
+    name: "Premier League",
+    flag: "https://media.api-sports.io/flags/gb-eng.svg",
+  },
+  {
+    id: 140,
+    name: "La Liga",
+    flag: "https://media.api-sports.io/flags/es.svg",
+  },
+  {
+    id: 78,
+    name: "Bundesliga",
+    flag: "https://media.api-sports.io/flags/de.svg",
+  },
+  {
+    id: 61,
+    name: "Ligue 1 (Fransa)",
+    flag: "https://media.api-sports.io/flags/fr.svg",
+  },
+  {
+    id: 135,
+    name: "Serie A (İtalya)",
+    flag: "https://media.api-sports.io/flags/it.svg",
+  },
+  {
+    id: 253,
+    name: "Major League Soccer (ABD)",
+    flag: "https://media.api-sports.io/flags/us.svg",
+  },
+  {
+    id: 203,
+    name: "Süper Lig (Türkiye)",
+    flag: "https://media.api-sports.io/flags/tr.svg",
+  },
+  {
+    id: 94,
+    name: "Primeira Liga (Portekiz)",
+    flag: "https://media.api-sports.io/flags/pt.svg",
+  },
 
-  { id: 109, name: "J1 League (Japonya)" },
-  { id: 125, name: "Scottish Premiership" },
-  { id: 126, name: "Eredivisie (Hollanda)" },
-  { id: 127, name: "Argentine Primera División League" },
+  {
+    id: 91,
+    name: "Eredivisie (Hollanda)",
+    flag: "https://media.api-sports.io/flags/nl.svg",
+  },
 
-  { id: 128, name: "Russian Premier League" },
-  { id: 129, name: "Belgian Pro League" },
-  { id: 132, name: "Ekstraklasa (Polonya)" },
+  {
+    id: 235,
+    name: "Russian Premier League",
+    flag: "https://media.api-sports.io/flags/ru.svg",
+  },
+  {
+    id: 145,
+    name: "Belgian Pro League",
+    flag: "https://media.api-sports.io/flags/be.svg",
+  },
+  {
+    id: 106,
+    name: "Ekstraklasa (Polonya)",
+    flag: "https://media.api-sports.io/flags/pl.svg",
+  },
 
-  { id: 139, name: "Ukrainian Premier League" },
-  { id: 150, name: "Saudi Pro League" },
-
-  { id: 151, name: "Chinese Super League" },
-  { id: 157, name: "Australian A-League" },
-  { id: 160, name: "Mexican Liga MX" },
+  {
+    id: 333,
+    name: "Ukrainian Premier League",
+    flag: "https://media.api-sports.io/flags/ua.svg",
+  },
+  {
+    id: 307,
+    name: "Saudi Pro League",
+    flag: "https://media.api-sports.io/flags/sa.svg",
+  },
 ];
 
 const today = new Date();
@@ -57,11 +106,11 @@ const to = formatDate(nextWeek);
 //
 //};
 
-export async function getMatchs(topLeagues) {
+export async function getMatchs(topLeagues_str) {
   const matches = [];
   try {
     const response = await fetch(
-      `https://v3.football.api-sports.io/fixtures?live=${topLeagues}`,
+      `https://v3.football.api-sports.io/fixtures?live=${topLeagues_str}`,
       {
         method: "GET",
         headers: {
@@ -91,9 +140,10 @@ export async function getMatchs(topLeagues) {
         league: {
           league_id: element.league.id,
           league_name: element.league.name,
-          league_logo: element.league.flag,
+          league_logo: element.league.logo,
         },
       };
+      console.log(veri);
       matches.push(veri);
     });
     return matches;
@@ -140,8 +190,7 @@ export async function getLeaugue(league_id, search_season) {
       };
       teams.push(veri);
     });
-    console.log(teams);
-    console.log(leauge_data);
+
     return [leauge_data, teams];
   } catch (error) {
     console.log("Error while get leagues", error);
@@ -161,11 +210,12 @@ export async function getFixtures(topLeagues) {
       }
     );
     const data = await response.json();
-
+    console.log(data.response);
     data.response.forEach((element) => {
       let veri = {
         fixture_id: element.fixture.id,
         country_name: element.league.country,
+        country_flag: element.league.flag,
         elapsed: element.fixture.status.elapsed,
         home_team: {
           id: element.teams.home.id,
@@ -194,7 +244,7 @@ export async function getFixtures(topLeagues) {
 }
 
 export async function getFixturesByLeague(leagueId) {
-    const matches = [];
+  const matches = [];
 
   const url = `https://v3.football.api-sports.io/fixtures?league=${leagueId}&season=2023&from=2023-11-20&to=2023-11-29`;
 
@@ -206,35 +256,34 @@ export async function getFixturesByLeague(leagueId) {
   });
 
   const data = await res.json();
-  data.response.forEach(element => {
-    let veri={
-        "league":{
-        "name":element.league.name,
-        "id":element.league.id,
-        "logo":element.league.logo
-    },
-        "fixture":{
-            "id":element.fixture.id,
-            "date":element.fixture.date,
-            "time":element.fixture.timestamp,
-            "ref":element.fixture.referee,
-            "stadium":element.fixture.venue.name,
-            "city":element.fixture.venue.city
-        },
-        "homeTeam":{
-            "id":element.teams.home.id,
-            "name":element.teams.home.name,
-            "logo":element.teams.home.logo,
-
-        },
-                "awayTeam":{
-            "id":element.teams.away.id,
-            "name":element.teams.away.name,
-            "logo":element.teams.away.logo,
-
-        }
-    }
-    matches.push(veri)
+  data.response.forEach((element) => {
+    let veri = {
+      league: {
+        name: element.league.name,
+        id: element.league.id,
+        logo: element.league.logo,
+        flag: element.league.flag,
+      },
+      fixture: {
+        id: element.fixture.id,
+        date: element.fixture.date,
+        time: element.fixture.timestamp,
+        ref: element.fixture.referee,
+        stadium: element.fixture.venue.name,
+        city: element.fixture.venue.city,
+      },
+      homeTeam: {
+        id: element.teams.home.id,
+        name: element.teams.home.name,
+        logo: element.teams.home.logo,
+      },
+      awayTeam: {
+        id: element.teams.away.id,
+        name: element.teams.away.name,
+        logo: element.teams.away.logo,
+      },
+    };
+    matches.push(veri);
   });
   return matches || [];
 }
