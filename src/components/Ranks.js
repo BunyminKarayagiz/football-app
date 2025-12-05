@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/League.css";
 import FormDisplay from "./FormDisplay";
 
-function Ranks({ teams = [], league_info = {} }) {
+function Ranks({ teams = [] }) {
   return (
     <div className="teams-info-container">
       <p>{teams.teams.rank}</p>

@@ -6717,315 +6717,314 @@ export const xxx=[
 export const ranks=[
     {
         "teams": {
-            "id": 50,
+            "id": 645,
             "rank": 1,
-            "name": "Manchester City",
-            "logo": "https://media.api-sports.io/football/teams/50.png",
-            "points": 91,
-            "goalsdiff": 62,
-            "form": "WWWWW",
+            "name": "Galatasaray",
+            "logo": "https://media.api-sports.io/football/teams/645.png",
+            "points": 102,
+            "goalsdiff": 66,
+            "form": "WLWWW",
             "played": 38,
-            "win": 28,
-            "draw": 7,
-            "lose": 3
+            "win": 33,
+            "draw": 3,
+            "lose": 2
         }
     },
     {
         "teams": {
-            "id": 42,
+            "id": 611,
             "rank": 2,
-            "name": "Arsenal",
-            "logo": "https://media.api-sports.io/football/teams/42.png",
-            "points": 89,
-            "goalsdiff": 62,
-            "form": "WWWWW",
+            "name": "Fenerbahce",
+            "logo": "https://media.api-sports.io/football/teams/611.png",
+            "points": 99,
+            "goalsdiff": 68,
+            "form": "WWWDW",
             "played": 38,
-            "win": 28,
-            "draw": 5,
-            "lose": 5
-        }
-    },
-    {
-        "teams": {
-            "id": 40,
-            "rank": 3,
-            "name": "Liverpool",
-            "logo": "https://media.api-sports.io/football/teams/40.png",
-            "points": 82,
-            "goalsdiff": 45,
-            "form": "WDWDL",
-            "played": 38,
-            "win": 24,
-            "draw": 10,
-            "lose": 4
-        }
-    },
-    {
-        "teams": {
-            "id": 66,
-            "rank": 4,
-            "name": "Aston Villa",
-            "logo": "https://media.api-sports.io/football/teams/66.png",
-            "points": 68,
-            "goalsdiff": 15,
-            "form": "LDLDW",
-            "played": 38,
-            "win": 20,
-            "draw": 8,
-            "lose": 10
-        }
-    },
-    {
-        "teams": {
-            "id": 47,
-            "rank": 5,
-            "name": "Tottenham",
-            "logo": "https://media.api-sports.io/football/teams/47.png",
-            "points": 66,
-            "goalsdiff": 13,
-            "form": "WLWLL",
-            "played": 38,
-            "win": 20,
+            "win": 31,
             "draw": 6,
+            "lose": 1
+        }
+    },
+    {
+        "teams": {
+            "id": 998,
+            "rank": 3,
+            "name": "Trabzonspor",
+            "logo": "https://media.api-sports.io/football/teams/998.png",
+            "points": 67,
+            "goalsdiff": 19,
+            "form": "WWWLW",
+            "played": 38,
+            "win": 21,
+            "draw": 4,
+            "lose": 13
+        }
+    },
+    {
+        "teams": {
+            "id": 564,
+            "rank": 4,
+            "name": "Istanbul Basaksehir",
+            "logo": "https://media.api-sports.io/football/teams/564.png",
+            "points": 61,
+            "goalsdiff": 14,
+            "form": "WLWWW",
+            "played": 38,
+            "win": 18,
+            "draw": 7,
+            "lose": 13
+        }
+    },
+    {
+        "teams": {
+            "id": 1004,
+            "rank": 5,
+            "name": "Kasimpasa",
+            "logo": "https://media.api-sports.io/football/teams/1004.png",
+            "points": 56,
+            "goalsdiff": -3,
+            "form": "WDWLW",
+            "played": 38,
+            "win": 16,
+            "draw": 8,
+            "lose": 14
+        }
+    },
+    {
+        "teams": {
+            "id": 549,
+            "rank": 6,
+            "name": "Besiktas",
+            "logo": "https://media.api-sports.io/football/teams/549.png",
+            "points": 56,
+            "goalsdiff": 5,
+            "form": "LDDWL",
+            "played": 38,
+            "win": 16,
+            "draw": 8,
+            "lose": 14
+        }
+    },
+    {
+        "teams": {
+            "id": 1002,
+            "rank": 7,
+            "name": "Sivasspor",
+            "logo": "https://media.api-sports.io/football/teams/1002.png",
+            "points": 54,
+            "goalsdiff": -7,
+            "form": "WWLLW",
+            "played": 38,
+            "win": 14,
+            "draw": 12,
             "lose": 12
         }
     },
     {
         "teams": {
-            "id": 49,
-            "rank": 6,
-            "name": "Chelsea",
-            "logo": "https://media.api-sports.io/football/teams/49.png",
-            "points": 63,
-            "goalsdiff": 14,
-            "form": "WWWWW",
-            "played": 38,
-            "win": 18,
-            "draw": 9,
-            "lose": 11
-        }
-    },
-    {
-        "teams": {
-            "id": 34,
-            "rank": 7,
-            "name": "Newcastle",
-            "logo": "https://media.api-sports.io/football/teams/34.png",
-            "points": 60,
-            "goalsdiff": 23,
-            "form": "WLDWW",
-            "played": 38,
-            "win": 18,
-            "draw": 6,
-            "lose": 14
-        }
-    },
-    {
-        "teams": {
-            "id": 33,
+            "id": 996,
             "rank": 8,
-            "name": "Manchester United",
-            "logo": "https://media.api-sports.io/football/teams/33.png",
-            "points": 60,
-            "goalsdiff": -1,
-            "form": "WWLLD",
-            "played": 38,
-            "win": 18,
-            "draw": 6,
-            "lose": 14
-        }
-    },
-    {
-        "teams": {
-            "id": 48,
-            "rank": 9,
-            "name": "West Ham",
-            "logo": "https://media.api-sports.io/football/teams/48.png",
+            "name": "Alanyaspor",
+            "logo": "https://media.api-sports.io/football/teams/996.png",
             "points": 52,
-            "goalsdiff": -14,
-            "form": "LWLDL",
-            "played": 38,
-            "win": 14,
-            "draw": 10,
-            "lose": 14
-        }
-    },
-    {
-        "teams": {
-            "id": 52,
-            "rank": 10,
-            "name": "Crystal Palace",
-            "logo": "https://media.api-sports.io/football/teams/52.png",
-            "points": 49,
-            "goalsdiff": -1,
-            "form": "WWWDW",
-            "played": 38,
-            "win": 13,
-            "draw": 10,
-            "lose": 15
-        }
-    },
-    {
-        "teams": {
-            "id": 51,
-            "rank": 11,
-            "name": "Brighton",
-            "logo": "https://media.api-sports.io/football/teams/51.png",
-            "points": 48,
-            "goalsdiff": -7,
-            "form": "LLDWL",
+            "goalsdiff": 3,
+            "form": "DDDDW",
             "played": 38,
             "win": 12,
-            "draw": 12,
-            "lose": 14
+            "draw": 16,
+            "lose": 10
         }
     },
     {
         "teams": {
-            "id": 35,
-            "rank": 12,
-            "name": "Bournemouth",
-            "logo": "https://media.api-sports.io/football/teams/35.png",
-            "points": 48,
-            "goalsdiff": -13,
-            "form": "LLLWW",
+            "id": 1007,
+            "rank": 9,
+            "name": "Rizespor",
+            "logo": "https://media.api-sports.io/football/teams/1007.png",
+            "points": 50,
+            "goalsdiff": -10,
+            "form": "LDLLD",
             "played": 38,
-            "win": 13,
-            "draw": 9,
+            "win": 14,
+            "draw": 8,
             "lose": 16
         }
     },
     {
         "teams": {
-            "id": 36,
-            "rank": 13,
-            "name": "Fulham",
-            "logo": "https://media.api-sports.io/football/teams/36.png",
-            "points": 47,
-            "goalsdiff": -6,
-            "form": "WLDDL",
+            "id": 1005,
+            "rank": 10,
+            "name": "Antalyaspor",
+            "logo": "https://media.api-sports.io/football/teams/1005.png",
+            "points": 49,
+            "goalsdiff": -5,
+            "form": "DWLLL",
             "played": 38,
-            "win": 13,
-            "draw": 8,
-            "lose": 17
+            "win": 12,
+            "draw": 13,
+            "lose": 13
         }
     },
     {
         "teams": {
-            "id": 39,
-            "rank": 14,
-            "name": "Wolves",
-            "logo": "https://media.api-sports.io/football/teams/39.png",
-            "points": 46,
-            "goalsdiff": -15,
-            "form": "LLLWL",
+            "id": 3573,
+            "rank": 11,
+            "name": "Gazişehir Gaziantep",
+            "logo": "https://media.api-sports.io/football/teams/3573.png",
+            "points": 44,
+            "goalsdiff": -7,
+            "form": "WWWDL",
             "played": 38,
-            "win": 13,
-            "draw": 7,
+            "win": 12,
+            "draw": 8,
             "lose": 18
         }
     },
     {
         "teams": {
-            "id": 45,
-            "rank": 15,
-            "name": "Everton",
-            "logo": "https://media.api-sports.io/football/teams/45.png",
-            "points": 40,
-            "goalsdiff": -11,
-            "form": "LWDWW",
+            "id": 3563,
+            "rank": 12,
+            "name": "Adana Demirspor",
+            "logo": "https://media.api-sports.io/football/teams/3563.png",
+            "points": 44,
+            "goalsdiff": -7,
+            "form": "LLLWL",
             "played": 38,
-            "win": 13,
-            "draw": 9,
-            "lose": 16
+            "win": 10,
+            "draw": 14,
+            "lose": 14
         }
     },
     {
         "teams": {
-            "id": 55,
+            "id": 3603,
+            "rank": 13,
+            "name": "Samsunspor",
+            "logo": "https://media.api-sports.io/football/teams/3603.png",
+            "points": 43,
+            "goalsdiff": -10,
+            "form": "LDLWL",
+            "played": 38,
+            "win": 11,
+            "draw": 10,
+            "lose": 17
+        }
+    },
+    {
+        "teams": {
+            "id": 1001,
+            "rank": 14,
+            "name": "Kayserispor",
+            "logo": "https://media.api-sports.io/football/teams/1001.png",
+            "points": 42,
+            "goalsdiff": -13,
+            "form": "LDLDW",
+            "played": 38,
+            "win": 11,
+            "draw": 12,
+            "lose": 15
+        }
+    },
+    {
+        "teams": {
+            "id": 3575,
+            "rank": 15,
+            "name": "Hatayspor",
+            "logo": "https://media.api-sports.io/football/teams/3575.png",
+            "points": 41,
+            "goalsdiff": -7,
+            "form": "WDWDL",
+            "played": 38,
+            "win": 9,
+            "draw": 14,
+            "lose": 15
+        }
+    },
+    {
+        "teams": {
+            "id": 607,
             "rank": 16,
-            "name": "Brentford",
-            "logo": "https://media.api-sports.io/football/teams/55.png",
-            "points": 39,
-            "goalsdiff": -9,
-            "form": "LWDLW",
+            "name": "Konyaspor",
+            "logo": "https://media.api-sports.io/football/teams/607.png",
+            "points": 41,
+            "goalsdiff": -13,
+            "form": "LDWDL",
+            "played": 38,
+            "win": 9,
+            "draw": 14,
+            "lose": 15
+        }
+    },
+    {
+        "teams": {
+            "id": 1010,
+            "rank": 17,
+            "name": "Ankaragucu",
+            "logo": "https://media.api-sports.io/football/teams/1010.png",
+            "points": 40,
+            "goalsdiff": -6,
+            "form": "LDLDD",
+            "played": 38,
+            "win": 8,
+            "draw": 16,
+            "lose": 14
+        }
+    },
+    {
+        "teams": {
+            "id": 3589,
+            "rank": 18,
+            "name": "Fatih Karagümrük",
+            "logo": "https://media.api-sports.io/football/teams/3589.png",
+            "points": 40,
+            "goalsdiff": -3,
+            "form": "WLLDW",
             "played": 38,
             "win": 10,
-            "draw": 9,
+            "draw": 10,
+            "lose": 18
+        }
+    },
+    {
+        "teams": {
+            "id": 3601,
+            "rank": 19,
+            "name": "Pendikspor",
+            "logo": "https://media.api-sports.io/football/teams/3601.png",
+            "points": 37,
+            "goalsdiff": -31,
+            "form": "LDWWL",
+            "played": 38,
+            "win": 9,
+            "draw": 10,
             "lose": 19
         }
     },
     {
         "teams": {
-            "id": 65,
-            "rank": 17,
-            "name": "Nottingham Forest",
-            "logo": "https://media.api-sports.io/football/teams/65.png",
-            "points": 32,
-            "goalsdiff": -18,
-            "form": "WLWLL",
-            "played": 38,
-            "win": 9,
-            "draw": 9,
-            "lose": 20
-        }
-    },
-    {
-        "teams": {
-            "id": 1359,
-            "rank": 18,
-            "name": "Luton",
-            "logo": "https://media.api-sports.io/football/teams/1359.png",
-            "points": 26,
-            "goalsdiff": -33,
-            "form": "LLDLL",
-            "played": 38,
-            "win": 6,
-            "draw": 8,
-            "lose": 24
-        }
-    },
-    {
-        "teams": {
-            "id": 44,
-            "rank": 19,
-            "name": "Burnley",
-            "logo": "https://media.api-sports.io/football/teams/44.png",
-            "points": 24,
-            "goalsdiff": -37,
-            "form": "LLLDW",
-            "played": 38,
-            "win": 5,
-            "draw": 9,
-            "lose": 24
-        }
-    },
-    {
-        "teams": {
-            "id": 62,
+            "id": 3578,
             "rank": 20,
-            "name": "Sheffield Utd",
-            "logo": "https://media.api-sports.io/football/teams/62.png",
+            "name": "İstanbulspor",
+            "logo": "https://media.api-sports.io/football/teams/3578.png",
             "points": 16,
-            "goalsdiff": -69,
+            "goalsdiff": -53,
             "form": "LLLLL",
             "played": 38,
-            "win": 3,
+            "win": 4,
             "draw": 7,
-            "lose": 28
+            "lose": 27
         }
     }
 ]
 
 
 export const league_info={
-    "id": 39,
-    "league_name": "Premier League",
-    "country": "England",
-    "logo": "https://media.api-sports.io/football/leagues/39.png",
+    "id": 203,
+    "league_name": "Süper Lig",
+    "country": "Turkey",
+    "logo": "https://media.api-sports.io/football/leagues/203.png",
     "season": 2023
 }
-
 
 export const xxfixture=[
     {

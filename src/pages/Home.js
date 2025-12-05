@@ -3,11 +3,11 @@ import "../styles/Home.css";
 import LiveScores from "../components//LiveScores.js";
 import LeagueInfo from "../components/LeagueInfo.js";
 import Fixtures from "../components/Fixtures.js";
-import { topLeagues } from "../services/apiFootballServices";
+import SelectLeague from "../components/SelectLeague.js";
 //import { getLeaugue } from "../services/apiFootballServices.js";
 
 function Home() {
-  const [selectedLeague, setSelectedLeague] = useState(topLeagues[0].id); // varsayılan lig
+  const [selectedLeague, setSelectedLeague] = useState(39); // varsayılan lig
   //getLeaugue(39, 2023).then((data) => {
   //console.log(data);
   //console.log(data[0]);
@@ -25,26 +25,7 @@ function Home() {
         <div className="box" id="fixture">
           <div className="fixture-tite-container">
             <h1>Fixture</h1>
-
-            <div className="league-select-wrapper">
-              <img
-                src={topLeagues.find((l) => l.id === selectedLeague).flag}
-                className="selected-flag"
-                alt=""
-              />
-
-              <select
-                value={selectedLeague}
-                onChange={(e) => setSelectedLeague(Number(e.target.value))}
-              >
-                {topLeagues.map((league) => (
-                  <option key={league.id} value={league.id}>
-                    {league.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            
+            <SelectLeague setLeague={setSelectedLeague} />
           </div>
 
           <Fixtures selectedLeague={selectedLeague} />
@@ -52,8 +33,11 @@ function Home() {
       </div>
 
       <div className="box" id="league-tablo">
-        <h1>League Table</h1>
-        <LeagueInfo />
+        <div className="fixture-tite-container">
+          <h1>League</h1>
+          <SelectLeague setLeague={setSelectedLeague} />
+        </div>
+        <LeagueInfo selectedLeague={selectedLeague} />
       </div>
     </div>
   );
