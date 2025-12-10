@@ -43,7 +43,7 @@ Arayüz tamamen **TailwindCSS** ile modern ve responsive bir tasarıma dönüşt
 
 ---
 
-![Alt text](images/example.png)
+![alt text](https://github.com/BunyminKarayagiz/football-app/src/images/LiveScore.png)
 
 ## ⚡ Kurulum ve Kullanım
 
