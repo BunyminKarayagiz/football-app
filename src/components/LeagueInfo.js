@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from "react";
 import Ranks from "./Ranks";
-import { league_info, ranks } from "./xx";
+//import { league_info, ranks } from "./xx";
+import { getLeaugue } from "../services/apiFootballServices";
 
 function LeagueInfo({ selectedLeague }) {
   const [leagueInfo, setLeagueInfo] = useState({});
   const [teams, setTeams] = useState([]);
-
+  const [boolData, setBoolData] = useState(true);
   useEffect(() => {
-    setTeams(ranks);
-    setLeagueInfo(league_info);
+    async function fetchData() {
+      const [league, team] = await getLeaugue(selectedLeague, 2023);
+      if (league === "") setBoolData(false);
+      setTeams(team);
+      setLeagueInfo(league);
+    }
+    fetchData();
+    //setTeams(ranks);
+    //setLeagueInfo(league_info);
   }, [selectedLeague]);
 
-  return (
+  return boolData ? (
     <div className="w-full bg-[#1B1F24] rounded-xl p-[2vh] mt-[3vh] shadow-lg border border-gray-700">
       <div className="text-white mb-[2vh]">
         <h2 className="text-[2.5vh] font-bold">{leagueInfo.league_name}</h2>
@@ -39,6 +47,8 @@ function LeagueInfo({ selectedLeague }) {
         ))}
       </div>
     </div>
+  ) : (
+    <p className="flex h-[5vh] justify-center border border-[#1F2937] items-center rounded-[2vh] bg-[#161B22] text-[2vh] text-gray-400">No fixtures available.</p>
   );
 }
 

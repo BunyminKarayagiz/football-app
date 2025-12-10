@@ -1,5 +1,5 @@
 export const topLeagues_str =
-  "39-140-78-61-135-253-203-94-91-235-145-106-333-307";
+  "39-140-78-61-135-253-203-94-91-235-145-106-2-307";
 
 export const topLeagues = [
   {
@@ -66,8 +66,8 @@ export const topLeagues = [
   },
 
   {
-    id: 333,
-    name: "Ukrainian Premier League",
+    id: 2,
+    name: "Champions League",
     flag: "https://media.api-sports.io/flags/ua.svg",
   },
   {
@@ -77,34 +77,6 @@ export const topLeagues = [
   },
 ];
 
-const today = new Date();
-
-// Bir hafta sonrası
-const nextWeek = new Date();
-nextWeek.setDate(today.getDate() + 7);
-
-// API-Football formatına göre tarih oluşturma: YYYY-MM-DD
-const formatDate = (date) => date.toISOString().split("T")[0];
-
-const from = formatDate(today);
-const to = formatDate(nextWeek);
-
-//export async function getLeagues(){
-//
-//    try{
-//        const response = await fetch("https://v3.football.api-sports.io/leagues", {
-//            "method": "GET",
-//            "headers": {
-//                "x-apisports-key": process.env.REACT_APP_APIKEY_APIFOOTBALL
-//            }
-//        });
-//        const data = await response.json();
-//        console.log(data.response)
-//    }catch(error){
-//        console.log("Error while get leagues", error)
-//    }
-//
-//};
 
 export async function getMatchs(topLeagues_str) {
   const matches = [];
@@ -143,7 +115,6 @@ export async function getMatchs(topLeagues_str) {
           league_logo: element.league.logo,
         },
       };
-      console.log(veri);
       matches.push(veri);
     });
     return matches;
@@ -193,7 +164,8 @@ export async function getLeaugue(league_id, search_season) {
 
     return [leauge_data, teams];
   } catch (error) {
-    console.log("Error while get leagues", error);
+    console.log("Lig Verisi Çekilemedi", error);
+    return ["",""]
   }
 }
 
@@ -201,7 +173,7 @@ export async function getFixtures(topLeagues) {
   const matches = [];
   try {
     const response = await fetch(
-      `https://v3.football.api-sports.io/fixtures?live=${topLeagues}&season=2023&from=${from}&to=${to}`,
+      `https://v3.football.api-sports.io/fixtures?live=${topLeagues}&season=2023&from=2023-12-10&to=2023-12-10`,
       {
         method: "GET",
         headers: {
@@ -237,6 +209,7 @@ export async function getFixtures(topLeagues) {
       };
       matches.push(veri);
     });
+    console.log("sad",matches)
     return matches;
   } catch (error) {
     console.log("Error while get leagues", error);

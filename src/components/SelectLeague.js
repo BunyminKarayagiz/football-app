@@ -1,18 +1,23 @@
-import { useState } from "react";
 import { topLeagues } from "../services/apiFootballServices";
 import { IoChevronDown } from "react-icons/io5";
 
-function SelectLeague({ setLeague }) {
-  const [selectedLeague] = useState(topLeagues[0].id);
-  const current = topLeagues.find((l) => l.id === selectedLeague);
+function SelectLeague({ selectedLeague, setLeague }) {
+  if (!selectedLeague) {
+    selectedLeague = 39;
+  }
 
+  const current = topLeagues.find((l) => l.id === selectedLeague);
   return (
     <div className="relative w-fit">
       <div
         className="flex items-center gap-[1vh] bg-white/5 px-[2vh] py-[1vh] rounded-xl 
                    backdrop-blur-md shadow-sm hover:bg-white/10 transition pr-[2vh]"
       >
-        <img src={current.flag} className="w-[2.5vh] h-[2.5vh] rounded-md shadow" alt="" />
+        <img
+          src={current.flag}
+          className="w-[2.5vh] h-[2.5vh] rounded-md shadow"
+          alt=""
+        />
 
         {/* SELECT */}
         <select
@@ -21,7 +26,7 @@ function SelectLeague({ setLeague }) {
           className="bg-transparent text-[gray-200] outline-none cursor-pointer text-[1.5vh]
                      appearance-none w-full"
           style={{
-            colorScheme: "dark", // Safari ve Firefox için mavi hover fix
+            colorScheme: "dark",
           }}
         >
           {topLeagues.map((league) => (
@@ -45,7 +50,6 @@ function SelectLeague({ setLeague }) {
           select option:checked{
               background-color: #333 !important;
           }
-
           select option:hover { 
             background-color:red !important;
           }

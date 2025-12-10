@@ -1,33 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { xxfixture } from "./xx";
+//import { xxfixture } from "./xx";
 import { MdOutlineDateRange, MdStadium } from "react-icons/md";
 import { PiHandshake } from "react-icons/pi";
 import { GiWhistle } from "react-icons/gi";
 import { FaInfo } from "react-icons/fa";
+import { getFixturesByLeague } from "../services/apiFootballServices";
 
 function Fixtures({ selectedLeague }) {
   const [fixtures, setFixtures] = useState([]);
 
   useEffect(() => {
-    setFixtures(xxfixture);
+
+    async function fetchData() {
+      const data = await getFixturesByLeague(selectedLeague);
+      console.log("Veri Alındı");
+      setFixtures(data);
+    }
+    fetchData();
+
+    //setFixtures(xxfixture);
   }, [selectedLeague]);
 
   if (fixtures.length === 0)
     return <p className="text-gray-400">No fixtures available.</p>;
 
   return (
-    <div className="space-y-[1vh] max-h-[50vh] overflow-y-auto">
+    <div className="snap-y space-y-[1vh] max-h-[50vh] overflow-y-auto">
       {/* Head Icons */}
       <div className="flex flex-wrap gap-[10vh] text-[2.5vh] text-gray-300 mt-[2vh] mb-[2vh] justify-around">
         <MdOutlineDateRange />
-        <PiHandshake /> 
+        <PiHandshake />
         <FaInfo />
       </div>
 
       {fixtures.map((match) => (
         <div
           key={match.fixture.id}
-          className="flex justify-between items-center  bg-[#1B1F24] p-[1.5vh] rounded-xl shadow-md border border-gray-800 hover:bg-[#21262d] transition"
+          className="flex justify-between snap-start items-center  bg-[#1B1F24] p-[1.5vh] rounded-xl shadow-md border border-gray-800 hover:bg-[#21262d] transition"
         >
           {/* DATE */}
           <div className="text-[1.7vh] text-center text-gray-300 w-[20vh]">
@@ -50,11 +59,19 @@ function Fixtures({ selectedLeague }) {
           {/* TEAMS */}
           <div className="flex flex-col w-[20vh]">
             <div className="flex items-center gap-[2vh]">
-              <img src={match.homeTeam.logo} alt="" className="w-[3vh] h-[3vh]" />
+              <img
+                src={match.homeTeam.logo}
+                alt=""
+                className="w-[3vh] h-[3vh]"
+              />
               <p className="text-[1.7vh]">{match.homeTeam.name}</p>
             </div>
             <div className="flex items-center gap-[2vh] mt-[1vh]">
-              <img src={match.awayTeam.logo} alt="" className="w-[3vh] h-[3vh]" />
+              <img
+                src={match.awayTeam.logo}
+                alt=""
+                className="w-[3vh] h-[3vh]"
+              />
               <p className="text-[1.7vh]">{match.awayTeam.name}</p>
             </div>
           </div>
@@ -62,7 +79,8 @@ function Fixtures({ selectedLeague }) {
           {/* REF + STADIUM */}
           <div className="text-sm text-gray-300 flex flex-col items-end gap-[2vh]">
             <div className="flex items-center gap-[1vh]">
-              <p className="text-[1.5vh]">{match.fixture.ref}</p> <GiWhistle className="text-[2vh] text-gray-400" />
+              <p className="text-[1.5vh]">{match.fixture.ref}</p>{" "}
+              <GiWhistle className="text-[2vh] text-gray-400" />
             </div>
             <div className="flex items-center gap-[1vh]">
               <p className="text-[1.5vh]">{match.fixture.stadium}</p>{" "}
