@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-//import { getFixturesByLeague } from "../services/apiFootballServices"; // API çağrı fonksiyonu
 import { xxfixture } from "./xx";
-import "../styles/LiveScoresAndFixtures.css";
-import { MdOutlineDateRange } from "react-icons/md";
+import { MdOutlineDateRange, MdStadium } from "react-icons/md";
 import { PiHandshake } from "react-icons/pi";
-import { MdStadium } from "react-icons/md";
 import { GiWhistle } from "react-icons/gi";
 import { FaInfo } from "react-icons/fa";
 
@@ -12,88 +9,68 @@ function Fixtures({ selectedLeague }) {
   const [fixtures, setFixtures] = useState([]);
 
   useEffect(() => {
-    //  const fetchFixtures = async () => {
-    //    const data = await getFixturesByLeague(selectedLeague);
-    //    setFixtures(data);
-    //  };
-    //  fetchFixtures();
     setFixtures(xxfixture);
   }, [selectedLeague]);
 
+  if (fixtures.length === 0)
+    return <p className="text-gray-400">No fixtures available.</p>;
+
   return (
-    <div className="fixtures-list">
-      <div className="fixture-info-icons">
-        <p>
-          <MdOutlineDateRange />
-        </p>
-        <p>
-          <PiHandshake />
-        </p>
-        <p>
-          <FaInfo />
-        </p>
+    <div className="space-y-[1vh] max-h-[50vh] overflow-y-auto">
+      {/* Head Icons */}
+      <div className="flex flex-wrap gap-[10vh] text-[2.5vh] text-gray-300 mt-[2vh] mb-[2vh] justify-around">
+        <MdOutlineDateRange />
+        <PiHandshake /> 
+        <FaInfo />
       </div>
-      {fixtures.length === 0 ? (
-        <p>No fixtures available.</p>
-      ) : (
-        fixtures.map((match) => (
-          <div className="fixture" key={match.fixture.id}>
-            <div className="time-container">
-              {match.fixture.date &&
-                (() => {
-                  const dateObj = new Date(match.fixture.date);
 
-                  const day = String(dateObj.getDate()).padStart(2, "0");
-                  const month = String(dateObj.getMonth() + 1).padStart(2, "0");
-                  const year = dateObj.getFullYear();
+      {fixtures.map((match) => (
+        <div
+          key={match.fixture.id}
+          className="flex justify-between items-center  bg-[#1B1F24] p-[1.5vh] rounded-xl shadow-md border border-gray-800 hover:bg-[#21262d] transition"
+        >
+          {/* DATE */}
+          <div className="text-[1.7vh] text-center text-gray-300 w-[20vh]">
+            {(() => {
+              const d = new Date(match.fixture.date);
+              return (
+                <>
+                  <p>{d.toLocaleDateString("tr-TR")}</p>
+                  <p>
+                    {d.toLocaleTimeString("tr-TR", {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </p>
+                </>
+              );
+            })()}
+          </div>
 
-                  const hours = String(dateObj.getHours()).padStart(2, "0");
-                  const minutes = String(dateObj.getMinutes()).padStart(2, "0");
-
-                  return (
-                    <>
-                      <p>{`${day}-${month}-${year}`}</p>
-                      <p>{`${hours}:${minutes}`}</p>
-                    </>
-                  );
-                })()}
+          {/* TEAMS */}
+          <div className="flex flex-col w-[20vh]">
+            <div className="flex items-center gap-[2vh]">
+              <img src={match.homeTeam.logo} alt="" className="w-[3vh] h-[3vh]" />
+              <p className="text-[1.7vh]">{match.homeTeam.name}</p>
             </div>
-
-            <div className="fixture-team-container">
-              <div className="fixture-team" id="home">
-                <img
-                  src={match.homeTeam.logo}
-                  alt={match.homeTeam.logo}
-                  className="team-logo"
-                />
-                <p>{match.homeTeam.name}</p>
-              </div>
-              <div className="fixture-team" id="away">
-                <img
-                  src={match.awayTeam.logo}
-                  alt={match.awayTeam.logo}
-                  className="team-logo"
-                />
-                <p>{match.awayTeam.name}</p>
-              </div>
-            </div>
-            <div className="fixture-ref-stad">
-              <div className="ref-stad">
-                <p>{match.fixture.ref}</p>
-                <p>
-                  <GiWhistle />
-                </p>
-              </div>
-              <div className="ref-stad">
-                <p>{match.fixture.stadium}</p>
-                <p>
-                  <MdStadium />
-                </p>
-              </div>
+            <div className="flex items-center gap-[2vh] mt-[1vh]">
+              <img src={match.awayTeam.logo} alt="" className="w-[3vh] h-[3vh]" />
+              <p className="text-[1.7vh]">{match.awayTeam.name}</p>
             </div>
           </div>
-        ))
-      )}
+
+          {/* REF + STADIUM */}
+          <div className="text-sm text-gray-300 flex flex-col items-end gap-[2vh]">
+            <div className="flex items-center gap-[1vh]">
+              <p className="text-[1.5vh]">{match.fixture.ref}</p> <GiWhistle className="text-[2vh] text-gray-400" />
+            </div>
+            <div className="flex items-center gap-[1vh]">
+              <p className="text-[1.5vh]">{match.fixture.stadium}</p>{" "}
+              <MdStadium className="text-[2vh] text-gray-400" />
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

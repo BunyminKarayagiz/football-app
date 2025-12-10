@@ -1,43 +1,48 @@
 import React, { useState } from "react";
-import "../styles/Home.css";
-import LiveScores from "../components//LiveScores.js";
+import LiveScores from "../components/LiveScores.js";
 import LeagueInfo from "../components/LeagueInfo.js";
 import Fixtures from "../components/Fixtures.js";
 import SelectLeague from "../components/SelectLeague.js";
-//import { getLeaugue } from "../services/apiFootballServices.js";
 
 function Home() {
-  const [selectedLeague, setSelectedLeague] = useState(39); // varsayılan lig
-  //getLeaugue(39, 2023).then((data) => {
-  //console.log(data);
-  //console.log(data[0]);
-  //console.log(data[1]);
-  //});
-  //getLeaugue(39,2023)
+  const [selectedLeague, setSelectedLeague] = useState(39);
 
   return (
-    <div className="home-container">
-      <div className="live-fixture-container">
-        <div className="box" id="live-score">
-          <h1>Live Scores</h1>
-          <LiveScores />
+    <div className="flex flex-col min-h-screen px-[8vh] py-[5vh] bg-[#0D1117] text-white">
+      {/* Üst Kısım: Live Scores + Fixture */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[5vh] w-full">
+        
+        {/* Left: Live Scores */}
+        <div className="w-full">
+          <h1 className="text-[3vh] font-semibold mb-[2vh]">Live Scores</h1>
+          <div className="bg-[#161B22] p-[1vh] rounded-xl shadow-md border border-gray-800">
+            <LiveScores />
+          </div>
         </div>
-        <div className="box" id="fixture">
-          <div className="fixture-tite-container">
-            <h1>Fixture</h1>
+
+        {/* Right: Fixture */}
+        <div className="w-full">
+          <div className="flex items-center justify-between mb-[2vh]">
+            <h1 className="text-[3vh] font-semibold">Fixtures</h1>
             <SelectLeague setLeague={setSelectedLeague} />
           </div>
 
-          <Fixtures selectedLeague={selectedLeague} />
+          <div className="w-full bg-[#161B22] p-[1vh] rounded-xl  shadow-md border border-gray-800">
+            <Fixtures selectedLeague={selectedLeague} />
+          </div>
         </div>
       </div>
 
-      <div className="box" id="league-tablo">
-        <div className="fixture-tite-container">
-          <h1>League</h1>
+      {/* Bottom: League Info */}
+      <div className="mt-[6vh] w-full">
+        <div className="flex items-center justify-between mb-[3vh]">
+          <h1 className="text-[3vh] font-semibold">League Info</h1>
           <SelectLeague setLeague={setSelectedLeague} />
         </div>
-        <LeagueInfo selectedLeague={selectedLeague} />
+
+        <div className="rounded-xl shadow-md">
+          <LeagueInfo selectedLeague={selectedLeague} />
+        </div>
       </div>
     </div>
   );

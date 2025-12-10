@@ -2,4 +2,6 @@ body{
   background-color:#0f172a;
 
   font-family: 'Inter', sans-serif;
+    backface-visibility: hidden;
+  will-change: transform;
 }
