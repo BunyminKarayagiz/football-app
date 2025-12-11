@@ -4,7 +4,7 @@ import FormDisplay from "./FormDisplay";
 function Ranks({ teams = [] }) {
   return (
     <div
-      className="grid grid-cols-[6vh_139.5vh_4.5vh_4.5vh_4.5vh_4.5vh_5vh_6vh_10vh]
+      className="grid grid-cols-[6vh_1fr_4.5vh_4.5vh_4.5vh_4.5vh_5vh_6vh_10vh]
                  items-center text-white bg-[#232830] rounded-[1vh] p-[1vh]
                  hover:bg-[#2c323a] transition border-[.1vh] border-gray-700">
       

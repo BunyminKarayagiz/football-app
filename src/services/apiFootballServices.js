@@ -77,6 +77,8 @@ export const topLeagues = [
   },
 ];
 
+export const seasons = [
+  2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020,2021,2022,2023];
 
 export async function getMatchs(topLeagues_str) {
   const matches = [];
@@ -165,7 +167,7 @@ export async function getLeaugue(league_id, search_season) {
     return [leauge_data, teams];
   } catch (error) {
     console.log("Lig Verisi Çekilemedi", error);
-    return ["",""]
+    return ["", ""];
   }
 }
 
@@ -209,7 +211,7 @@ export async function getFixtures(topLeagues) {
       };
       matches.push(veri);
     });
-    console.log("sad",matches)
+    console.log("sad", matches);
     return matches;
   } catch (error) {
     console.log("Error while get leagues", error);
@@ -259,4 +261,44 @@ export async function getFixturesByLeague(leagueId) {
     matches.push(veri);
   });
   return matches || [];
+}
+
+export async function getTopScores(leagueId, season) {
+  const players = [];
+  const url = `https://v3.football.api-sports.io/players/topscorers?season=${season}&league=${leagueId}`;
+
+  try {
+    const res = await fetch(url, {
+      method: "GET",
+      headers: {
+        "x-apisports-key": process.env.REACT_APP_APIKEY_APIFOOTBALL,
+      },
+    });
+    const data = await res.json();
+    //console.log(data.response)
+    data.response.forEach((player) => {
+      let veri = {
+        player: {
+          id: player.player.id,
+          name: player.player.name,
+          age: player.player.age,
+          photo: player.player.photo,
+        },
+        team: {
+          id: player.statistics[0].team.id,
+          name: player.statistics[0].team.name,
+          logo: player.statistics[0].team.logo,
+        },
+        statistics: {
+          appearences: player.statistics[0].games.appearences,
+          goal: player.statistics[0].goals.total,
+        },
+      };
+
+      players.push(veri);
+    });
+    return players;
+  } catch (error) {
+    console.log("Top Scores Verisi Alinamadi: ", error)
+  }
 }

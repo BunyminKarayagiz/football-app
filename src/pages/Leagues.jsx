@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Team() {
+function Leagues() {
+
   return (
     <div>Team</div>
   )
 }
 
-export default Team
+export default Leagues

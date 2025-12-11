@@ -3,22 +3,54 @@ import Ranks from "./Ranks";
 import { league_info, ranks } from "./xx";
 //import { getLeaugue } from "../services/apiFootballServices";
 
-function LeagueInfo({ selectedLeague }) {
+function LeagueInfo({ selectedLeague, selectedSeason }) {
   const [leagueInfo, setLeagueInfo] = useState({});
   const [teams, setTeams] = useState([]);
   const [boolData, setBoolData] = useState(true);
+  const season = selectedSeason ?? 2023; // Home sayfası season vermiyorsa 2023 kullan
+  const league = selectedLeague ?? 39;
+
   useEffect(() => {
-  //  async function fetchData() {
-  //    const [league, team] = await getLeaugue(selectedLeague, 2023);
-  //    if (league === "") setBoolData(false);
-  //    setTeams(team);
-  //    setLeagueInfo(league);
-  //  }
-  //  fetchData();
-    setTeams(ranks);
+    // Eğer league id yoksa (henüz gelmediyse) bekle
+    if (!league) return;
+
+    let mounted = true;
+    setBoolData(true); // fetch başlarken göstergeyi true yap (loading / veri var varsayımı)
+
+    //async function fetchData() {
+    //  try {
+    //    const [leagueRes, teamRes] = await getLeaugue(league, season);
+//
+    //    if (!mounted) return; // component unmount olduysa state güncelleme
+//
+    //    if (!leagueRes) {
+    //      // servisten boş döndüyse
+    //      setBoolData(false);
+    //      setLeagueInfo({});
+    //      setTeams([]);
+    //    } else {
+    //      console.log(selectedLeague)
+    //      setLeagueInfo(leagueRes);
+    //      setTeams(teamRes || []);
+    //      setBoolData(true);
+    //    }
+    //  } catch (error) {
+    //    console.error("getLeaugue error:", error);
+    //    if (!mounted) return;
+    //    setBoolData(false);
+    //    setLeagueInfo({});
+    //    setTeams([]);
+    //  }
+    //}
+//
+    //fetchData();
     setLeagueInfo(league_info);
-    setBoolData(true)
-  }, [selectedLeague]);
+    setTeams(ranks);
+    if (!mounted) return;
+    return () => {
+      mounted = false;
+    };
+  }, [league, season]); // bağımlılıklar derived (computed) değişkenler
 
   return boolData ? (
     <div className="w-full bg-[#1B1F24] rounded-xl p-[2vh] mt-[3vh] shadow-lg border border-gray-700">
@@ -28,8 +60,8 @@ function LeagueInfo({ selectedLeague }) {
       </div>
 
       <div
-        className="grid grid-cols-[6vh_142vh_4.5vh_4.5vh_4.5vh_4.5vh_5vh_6vh_10vh] 
-                      text-gray-400 text-[1.5vh] font-semibold border-b border-gray-600 pb-[1vh]"
+        className="grid grid-cols-[6vh_1fr_4.5vh_4.5vh_4.5vh_4.5vh_5vh_6vh_10vh] 
+                        text-gray-400 text-[1.5vh] font-semibold border-b border-gray-600 pb-[1vh]"
       >
         <p>#</p>
         <p>Team</p>
@@ -49,7 +81,9 @@ function LeagueInfo({ selectedLeague }) {
       </div>
     </div>
   ) : (
-    <p className="flex h-[5vh] justify-center border border-[#1F2937] items-center rounded-[2vh] bg-[#161B22] text-[2vh] text-gray-400">No fixtures available.</p>
+    <p className="flex h-[5vh] justify-center border border-[#1F2937] items-center rounded-[2vh] bg-[#161B22] text-[2vh] text-gray-400">
+      No fixtures available.
+    </p>
   );
 }
 

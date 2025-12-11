@@ -2,8 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Teams from "./pages/Teams";
-import Team from "./pages/Team";
+import Leagues from "./pages/Leagues";
+import League from "./pages/League";
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       <Routes>
         <Route element={<Navbar />}>
           <Route path="/" element={<Home />} />
-          <Route path="/teams" element={<Teams />} />
-          <Route path="/team/:id" element={<Team />} />
+          <Route path="/league/:id" element={<League />} />
+          <Route path="/leagues" element={<Leagues />} />
         </Route>
       </Routes>
     </Router>

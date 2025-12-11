@@ -63,12 +63,15 @@ export default function Footer() {
           </h3>
           <ul className="space-y-3 text-gray-400">
             <li onClick={() => {
-              navigate("/team/39");
+              navigate("/league/39");
 
             }} className="hover:text-white transition cursor-pointer">
               Premier League
             </li>
-            <li className="hover:text-white transition cursor-pointer">
+            <li onClick={() => {
+              navigate("/league/140");
+
+            }} className="hover:text-white transition cursor-pointer">
               La Liga
             </li>
             <li className="hover:text-white transition cursor-pointer">
