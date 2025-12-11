@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
-//import { xxfixture } from "./xx";
+import { xxfixture } from "./xx";
 import { MdOutlineDateRange, MdStadium } from "react-icons/md";
 import { PiHandshake } from "react-icons/pi";
 import { GiWhistle } from "react-icons/gi";
 import { FaInfo } from "react-icons/fa";
-import { getFixturesByLeague } from "../services/apiFootballServices";
+//import { getFixturesByLeague } from "../services/apiFootballServices";
 
 function Fixtures({ selectedLeague }) {
   const [fixtures, setFixtures] = useState([]);
 
   useEffect(() => {
 
-    async function fetchData() {
-      const data = await getFixturesByLeague(selectedLeague);
-      console.log("Veri Alındı");
-      setFixtures(data);
-    }
-    fetchData();
+    //async function fetchData() {
+    //  const data = await getFixturesByLeague(selectedLeague);
+    //  console.log("Veri Alındı");
+    //  setFixtures(data);
+    //}
+    //fetchData();
 
-    //setFixtures(xxfixture);
+    setFixtures(xxfixture);
   }, [selectedLeague]);
 
   if (fixtures.length === 0)

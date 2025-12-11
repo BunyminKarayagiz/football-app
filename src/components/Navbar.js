@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { FiAlignJustify } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+
   return (
     <>
       {/* NAVBAR */}
-      <div className="w-full h-[9vh] bg-[#1B1F24] text-white py-4 px-[4vh] shadow-lg flex items-center justify-between">
+      <header className="w-full h-[9vh] bg-[#1B1F24] text-white py-4 px-[4vh] shadow-lg flex items-center justify-between">
         <button
           className="text-[3vh] rounded-md hover:bg-[#252b33] transition"
           onClick={() => setOpen(true)}
@@ -17,11 +18,13 @@ function Navbar() {
           <FiAlignJustify />
         </button>
 
-        <h1 className="text-[2.5vh] font-bold tracking-wide">ScoreBall</h1>
-      </div>
+        <h1 className="text-[2.5vh] font-bold tracking-wide truncate">
+          ScoreBall
+        </h1>
+      </header>
 
       {/* SIDEBAR */}
-      <div
+      <aside
         className={`
           fixed top-0 left-0 h-full w-[35vh] bg-[#1E242A] text-white shadow-xl p-[2vh]
           transform transition-transform duration-300 z-50
@@ -45,16 +48,17 @@ function Navbar() {
               navigate("/");
               setOpen(false);
             }}
-            className="h-[5vh] py-[1vh] px-[1vh] rounded-[1vh] bg-[#2A323A] hover:bg-[#343d47] transition font-medium text-[2vh]"
+            className="nav-btn"
           >
             Home
           </button>
+
           <button
             onClick={() => {
               navigate("/league");
               setOpen(false);
             }}
-            className="h-[5vh] py-[1vh] px-[1vh] rounded-[1vh] bg-[#2A323A] hover:bg-[#343d47] transition font-medium text-[2vh]"
+            className="nav-btn"
           >
             League
           </button>
@@ -64,9 +68,19 @@ function Navbar() {
               navigate("/fixtures");
               setOpen(false);
             }}
-            className="h-[5vh] py-[1vh] px-[1vh] rounded-[1vh] bg-[#2A323A] hover:bg-[#343d47] transition font-medium text-[2vh]"
+            className="nav-btn"
           >
             Fixture
+          </button>
+
+          <button
+            onClick={() => {
+              navigate("/teams");
+              setOpen(false);
+            }}
+            className="nav-btn"
+          >
+            Teams
           </button>
 
           <button
@@ -74,22 +88,28 @@ function Navbar() {
               navigate("/players");
               setOpen(false);
             }}
-            className="h-[5vh] py-[1vh] px-[1vh] rounded-[1vh] bg-[#2A323A] hover:bg-[#343d47] transition font-medium text-[2vh]"
+            className="nav-btn"
           >
             Players
           </button>
         </div>
-      </div>
+      </aside>
 
       {/* OVERLAY */}
       {open && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 animate-fadeIn"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
           onClick={() => setOpen(false)}
         ></div>
       )}
 
-      <Outlet />
+      {/* MAIN CONTENT */}
+      <main className="min-h-screen bg-[#111317] text-white px-4">
+        <Outlet />
+      </main>
+
+      {/* FOOTER burada */}
+      <Footer />
     </>
   );
 }

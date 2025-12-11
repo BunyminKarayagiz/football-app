@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from "react";
 import Ranks from "./Ranks";
-//import { league_info, ranks } from "./xx";
-import { getLeaugue } from "../services/apiFootballServices";
+import { league_info, ranks } from "./xx";
+//import { getLeaugue } from "../services/apiFootballServices";
 
 function LeagueInfo({ selectedLeague }) {
   const [leagueInfo, setLeagueInfo] = useState({});
   const [teams, setTeams] = useState([]);
   const [boolData, setBoolData] = useState(true);
   useEffect(() => {
-    async function fetchData() {
-      const [league, team] = await getLeaugue(selectedLeague, 2023);
-      if (league === "") setBoolData(false);
-      setTeams(team);
-      setLeagueInfo(league);
-    }
-    fetchData();
-    //setTeams(ranks);
-    //setLeagueInfo(league_info);
+  //  async function fetchData() {
+  //    const [league, team] = await getLeaugue(selectedLeague, 2023);
+  //    if (league === "") setBoolData(false);
+  //    setTeams(team);
+  //    setLeagueInfo(league);
+  //  }
+  //  fetchData();
+    setTeams(ranks);
+    setLeagueInfo(league_info);
+    setBoolData(true)
   }, [selectedLeague]);
 
   return boolData ? (

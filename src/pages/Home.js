@@ -9,7 +9,7 @@ function Home() {
   const [infoLeague, setInfoLeague] = useState();
 
   return (
-    <div className="flex flex-col min-h-screen px-[8vh] py-[5vh] bg-[#0D1117] text-white">
+    <div className="flex flex-col flex-nowrap min-h-screen px-[8vh] py-[5vh] bg-[#0D1117] text-white">
       {/* Üst Kısım: Live Scores + Fixture */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[5vh] w-full">
         {/* Left: Live Scores */}

@@ -1,9 +1,11 @@
-
 function LiveMatch({ match }) {
   return (
-    <div className="snap-center bg-[#1B1F24] h-[15vh] backdrop-blur-md border border-[#1F2937] p-[2vh] rounded-[3vh] shadow-md hover:shadow-xl hover:bg-blue-500"> 
-      <div className="flex items-center justify-between mb-[4vh]">
-        <div className="flex items-center gap-[2vh]">
+    <div
+      className="snap-center bg-[#1B1F24] backdrop-blur-md
+border border-[#1F2937] p-[2vh] rounded-[3vh] shadow-md hover:shadow-xl hover:bg-blue-500"
+    >
+      <div className="flex items-center justify-between mb-[4vh] ">
+        <div className="flex items-center gap-[2vh] ">
           <img
             src={match.league.league_logo}
             alt="League"
@@ -12,10 +14,10 @@ function LiveMatch({ match }) {
           <p className="text-[1.5vh] font-medium">{match.league.league_name}</p>
         </div>
 
-        <p className="text-red-500 text-[1.5vh]  font-bold">{match.elapsed}'</p>
+        <p className="text-red-500 text-[1.5vh] font-bold ">{match.elapsed}'</p>
       </div>
 
-      <div className="flex items-center gap-[1vh] justify-between">
+      <div className="flex items-center gap-[1vh] justify-between ">
         <div className="flex items-center  gap-[1vh]">
           <img
             src={match.home_team.logo}
