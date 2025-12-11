@@ -18,17 +18,17 @@ function League() {
   }, [season, param.id]);
 
   return (
-    <div className="grid grid-cols-2 gap-[3vh] h-screen p-[6vh]">
+    <div className="grid grid-cols-2 gap-[3vh] p-[6vh]">
       <div className="">
         <div className="mb-[2vh]">
           <SelectSeason season={season} setSeason={setSeason} />
         </div>
-        <div className="overflow-y-auto h-[80vh] pr-[1vh]">
+        <div className="overflow-y-auto h-full pr-[1vh]">
           <LeagueInfo selectedLeague={param.id} selectedSeason={season} />
         </div>
       </div>
 
-      <div className="grid grid-rows-[1fr_1fr] gap-[5vh] w-full p-[5vh] overflow-y-auto">
+      <div className="grid grid-rows-[1fr_1fr_1fr] gap-[5vh] w-full p-[5vh] overflow-y-auto">
         <div className="rounded-[2vh] border border-[#374151] bg-[#1B1F24]">
           <h1 className="text-[3vh] font-semibold p-[1vh]">Top Scores</h1>
           <div className="grid grid-cols-[3vh_4vh_1fr_1vh_9vh_1vh_11vh] gap-[1vh] p-[1vh] border-b border-[#4B5563] text-[#9CA3AF] text-[2vh] place-items-center">
@@ -47,6 +47,9 @@ function League() {
         </div>
         <div className="rounded-[2vh] bg-white">
           <h1> Top Asists</h1>
+        </div>
+        <div className="rounded-[2vh] border border-[#374151] bg-[#1B1F24]">
+          asd
         </div>
       </div>
     </div>

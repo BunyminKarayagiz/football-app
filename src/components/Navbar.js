@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <>
       {/* NAVBAR */}
-      <header className="w-full h-[9vh] bg-[#1B1F24] text-white py-4 px-[4vh] shadow-lg flex items-center justify-between">
+      <header className="w-full h-[9vh] bg-[#1B1F24] text-white py-[2vh] px-[4vh] shadow-lg flex items-center justify-between">
         <button
           className="text-[3vh] rounded-md hover:bg-[#252b33] transition"
           onClick={() => setOpen(true)}
@@ -48,19 +48,19 @@ function Navbar() {
               navigate("/");
               setOpen(false);
             }}
-            className="nav-btn"
+            className="nav-btn h-[5vh] bg-[#2c323a] rounded-[2vh] hover:bg-gray-700 hover:border border-[#3E597F]"
           >
             Home
           </button>
 
           <button
             onClick={() => {
-              navigate("/league");
+              navigate("/leagues");
               setOpen(false);
             }}
-            className="nav-btn"
+            className="nav-btn h-[5vh] bg-[#2c323a] rounded-[2vh] hover:bg-gray-700 hover:border border-[#3E597F]"
           >
-            League
+            Leagues
           </button>
 
           <button
@@ -68,7 +68,7 @@ function Navbar() {
               navigate("/fixtures");
               setOpen(false);
             }}
-            className="nav-btn"
+            className="nav-btn h-[5vh] bg-[#2c323a] rounded-[2vh] hover:bg-gray-700 hover:border border-[#3E597F]"
           >
             Fixture
           </button>
@@ -78,7 +78,7 @@ function Navbar() {
               navigate("/teams");
               setOpen(false);
             }}
-            className="nav-btn"
+            className="nav-btn h-[5vh] bg-[#2c323a] rounded-[2vh] hover:bg-gray-700 hover:border border-[#3E597F]"
           >
             Teams
           </button>
@@ -88,7 +88,7 @@ function Navbar() {
               navigate("/players");
               setOpen(false);
             }}
-            className="nav-btn"
+            className="nav-btn h-[5vh] bg-[#2c323a] rounded-[2vh] hover:bg-gray-700 hover:border border-[#3E597F]"
           >
             Players
           </button>
@@ -98,7 +98,7 @@ function Navbar() {
       {/* OVERLAY */}
       {open && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="nav-btn"
           onClick={() => setOpen(false)}
         ></div>
       )}

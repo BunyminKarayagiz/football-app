@@ -19,7 +19,7 @@ function TopScoresPlayer({ selectedLeagueSeason, selectedLeagueId }) {
   }, [league, season]);
 
   return (
-    <div className="overflow-y-auto h-full max-h-[30vh] p-[1vh]">
+    <div className="overflow-y-auto h-full max-h-[35vh] p-[1vh]">
       {topScores.map((s, i) => (
         <div className="grid grid-cols-[3vh_4vh_1fr_6vh_4vh_6vh_6vh] p-[1vh] border border-[#374151] rounded-[2vh] mt-[.6vh] bg-[#232830] hover:bg-[#2c323a] gap-[1vh] text-[1.6vh] place-items-center">
           <p className="font-bold">{i + 1}.</p>
