@@ -29,7 +29,6 @@ function LeagueInfo({ selectedLeague, selectedSeason }) {
     //      setLeagueInfo({});
     //      setTeams([]);
     //    } else {
-    //      console.log(selectedLeague)
     //      setLeagueInfo(leagueRes);
     //      setTeams(teamRes || []);
     //      setBoolData(true);

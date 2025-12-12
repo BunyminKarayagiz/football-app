@@ -332,7 +332,7 @@ export async function getTopAssists(leagueId, season) {
         },
         statistics: {
           appearences: player.statistics[0].games.appearences,
-          goal: player.statistics[0].goals.total,
+          goal: player.statistics[0].goals.assists,
         },
       };
       players.push(veri);
