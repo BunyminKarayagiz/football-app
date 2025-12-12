@@ -302,3 +302,43 @@ export async function getTopScores(leagueId, season) {
     console.log("Top Scores Verisi Alinamadi: ", error)
   }
 }
+
+
+export async function getTopAssists(leagueId, season) {
+  const players = [];
+  const url = `https://v3.football.api-sports.io/players/topassists?season=${season}&league=${leagueId}`;
+
+  try {
+    const res = await fetch(url, {
+      method: "GET",
+      headers: {
+        "x-apisports-key": process.env.REACT_APP_APIKEY_APIFOOTBALL,
+      },
+    });
+    const data = await res.json();
+    //console.log(data.response)
+    data.response.forEach((player) => {
+      let veri = {
+        player: {
+          id: player.player.id,
+          name: player.player.name,
+          age: player.player.age,
+          photo: player.player.photo,
+        },
+        team: {
+          id: player.statistics[0].team.id,
+          name: player.statistics[0].team.name,
+          logo: player.statistics[0].team.logo,
+        },
+        statistics: {
+          appearences: player.statistics[0].games.appearences,
+          goal: player.statistics[0].goals.total,
+        },
+      };
+      players.push(veri);
+    });
+    return players;
+  } catch (error) {
+    console.log("Top Scores Verisi Alinamadi: ", error)
+  }
+}

@@ -1,8 +1,8 @@
 function LiveMatch({ match }) {
   return (
     <div
-      className="snap-center bg-[#1B1F24] backdrop-blur-md
-border border-[#1F2937] p-[2vh] rounded-[3vh] shadow-md hover:shadow-xl hover:bg-blue-500"
+      className="snap-y snap-center bg-[#1B1F24] backdrop-blur-md
+border border-[.1vh] border-[#1F2937] p-[2vh] rounded-[3vh] shadow-md hover:shadow-xl hover:bg-blue-500"
     >
       <div className="flex items-center justify-between mb-[4vh] ">
         <div className="flex items-center gap-[2vh] ">

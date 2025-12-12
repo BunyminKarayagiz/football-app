@@ -15,7 +15,7 @@ function Home() {
         {/* Left: Live Scores */}
         <div className="w-full">
           <h1 className="text-[3vh] font-semibold mb-[2vh]">Live Scores</h1>
-          <div className="bg-[#161B22] p-[1vh] rounded-xl shadow-md border border-gray-800">
+          <div className="bg-[#161B22] p-[1vh] rounded-xl shadow-md border border-[.1vh] border-gray-800">
             <LiveScores />
           </div>
         </div>
@@ -23,14 +23,13 @@ function Home() {
         {/* Right: Fixture */}
         <div className="w-full">
           <div className="flex items-center justify-between mb-[2vh]">
-            <h1 className="text-[3vh] font-semibold">Fixtures</h1>
             <SelectLeague
               selectedLeague={fixtureLeague}
               setLeague={setFixtureLeague}
             />
           </div>
 
-          <div className="w-full bg-[#161B22] p-[1vh] rounded-xl  shadow-md border border-gray-800">
+          <div className="w-full p-[1vh] rounded-xl  shadow-md">
             <Fixtures selectedLeague={fixtureLeague} />
           </div>
         </div>

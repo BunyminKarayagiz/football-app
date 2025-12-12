@@ -1,30 +1,28 @@
-import React, { useEffect, useState } from "react";
-//import { getTopScores } from "../services/apiFootballServices";
-import { xxtopScores } from "./xx";
+import React, { useState, useEffect } from "react";
 import { IoPersonSharp } from "react-icons/io5";
 import { TbPlayFootball } from "react-icons/tb";
 import { TbSoccerField } from "react-icons/tb";
 import { GoGoal } from "react-icons/go";
+import { xxtopAssists } from "./xx";
 
-function TopScoresPlayer({ selectedLeagueSeason, selectedLeagueId }) {
-  const [topScores, setTopScores] = useState([]);
+function TopAssists({ selectedLeagueSeason, selectedLeagueId }) {
+  const [topAssists, setTopAssists] = useState([]);
 
   const season = selectedLeagueSeason ?? 2023;
   const league = selectedLeagueId ?? 39;
 
   useEffect(() => {
     //async function fetchData() {
-    //  const players = await getTopScores(league, season);
+    //  const players = await getTopAssists(league, season);
     //  console.log(players)
-    //  setTopScores(players)
+    //  setTopAssists(players)
     //}
     //fetchData();
-    setTopScores(xxtopScores);
+    setTopAssists(xxtopAssists);
   }, [league, season]);
-
   return (
     <div className="rounded-[2vh] border border-[.1vh] border-[#374151] p-[1vh] max-h-[48vh] flex flex-col">
-      <h1 className="text-[3vh] font-semibold p-[1vh]">Top Scores</h1>
+      <h1 className="text-[3vh] font-semibold p-[1vh]">Top Assists</h1>
 
       <div
         className="grid grid-cols-[3vh_4vh_1fr_3vh_11vh_.1vh_11vh] 
@@ -39,7 +37,7 @@ function TopScoresPlayer({ selectedLeagueSeason, selectedLeagueId }) {
         <GoGoal />
       </div>
       <div className="snap-y overflow-y-auto">
-        {topScores.map((s, i) => (
+        {topAssists.map((s, i) => (
           <div
             key={i}
             className="snap-start grid grid-cols-[3vh_4vh_1fr_9vh_4vh_6vh_6vh] 
@@ -61,4 +59,4 @@ function TopScoresPlayer({ selectedLeagueSeason, selectedLeagueId }) {
   );
 }
 
-export default TopScoresPlayer;
+export default TopAssists;
