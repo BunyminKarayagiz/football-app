@@ -37,8 +37,6 @@ function Fixtures({ selectedLeague }) {
         <PiHandshake />
         <FaInfo />
       </div>
-
-      {/* --- SADECE MAÇ LİSTESİ SCROLL OLSUN --- */}
       <div className="overflow-y-auto space-y-[1vh] snap-y pr-[0.5vh]">
         {fixtures.map((match) => (
           <div
@@ -94,7 +92,6 @@ function Fixtures({ selectedLeague }) {
                 <p className="text-[1.7vh]">{match.awayTeam.name}</p>
               </div>
             </div>
-
             {/* REF + STADIUM */}
             <div className="flex flex-col items-end gap-[2vh] text-gray-300">
               <div className="flex items-center gap-[1vh]">

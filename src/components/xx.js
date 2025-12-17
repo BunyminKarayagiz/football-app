@@ -2057,7 +2057,6 @@ export const xxtopAssists = [
   },
 ];
 
-
 export const xxtopScores = [
   {
     player: {

@@ -31,7 +31,7 @@ function League() {
           selectedLeagueId={param.id}
         />
         <TopAssists selectedLeagueSeason={season} selectedLeagueId={param.id} />
-          <Fixtures selectedLeague={param.id} />
+        <Fixtures selectedLeague={param.id} />
       </div>
     </div>
   );

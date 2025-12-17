@@ -119,7 +119,7 @@ export async function getLiveMatchs(topLeagues_str) {
           league_logo: element.league.logo,
         },
       };
-      console.log("veri", matches)
+      console.log("veri", matches);
       matches.push(veri);
     });
 
@@ -136,7 +136,7 @@ export async function getLiveMatchs(topLeagues_str) {
       acc[leagueId].matches.push(match);
       return acc;
     }, {});
-    console.log(grouped)
+    console.log(grouped);
     return grouped;
   } catch (error) {
     console.log("Error while get leagues", error);

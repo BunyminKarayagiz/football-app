@@ -7,7 +7,7 @@ import SelectLeague from "../components/SelectLeague.js";
 function Home() {
   const [fixtureLeague, setFixtureLeague] = useState();
   const [infoLeague, setInfoLeague] = useState();
-  
+
   return (
     <div className="flex flex-col flex-nowrap min-h-screen px-[8vh] py-[5vh] bg-[#0D1117] text-white">
       {/* Üst Kısım: Live Scores + Fixture */}
@@ -15,7 +15,7 @@ function Home() {
         {/* Left: Live Scores */}
         <div className="w-full">
           <h1 className="text-[3vh] font-semibold mb-[2vh]">Live Scores</h1>
-          <div className="p-[1vh] rounded-[2vh] shadow-md border border-[.1vh] border-gray-800">
+          <div className="p-[1vh] rounded-[2vh] shadow-md border-[.1vh] border-gray-800">
             <LiveScores />
           </div>
         </div>
