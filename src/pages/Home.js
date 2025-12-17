@@ -15,7 +15,7 @@ function Home() {
         {/* Left: Live Scores */}
         <div className="w-full">
           <h1 className="text-[3vh] font-semibold mb-[2vh]">Live Scores</h1>
-          <div className="bg-[#161B22] p-[1vh] rounded-xl shadow-md border border-[.1vh] border-gray-800">
+          <div className="p-[1vh] rounded-[2vh] shadow-md border border-[.1vh] border-gray-800">
             <LiveScores />
           </div>
         </div>

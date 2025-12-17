@@ -5,10 +5,11 @@ import { PiHandshake } from "react-icons/pi";
 import { GiWhistle } from "react-icons/gi";
 import { FaInfo } from "react-icons/fa";
 //import { getFixturesByLeague } from "../services/apiFootballServices";
+import { useNavigate } from "react-router-dom";
 
 function Fixtures({ selectedLeague }) {
   const [fixtures, setFixtures] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     //async function fetchData() {
     //  const data = await getFixturesByLeague(selectedLeague);
@@ -66,7 +67,12 @@ function Fixtures({ selectedLeague }) {
 
             {/* TEAMS */}
             <div className="flex flex-col w-[20vh]">
-              <div className="flex items-center gap-[2vh]">
+              <div
+                onClick={() => {
+                  navigate(`/team/${match.homeTeam.id}`);
+                }}
+                className="cursor-pointer flex items-center gap-[2vh]"
+              >
                 <img
                   src={match.homeTeam.logo}
                   alt=""
@@ -74,7 +80,12 @@ function Fixtures({ selectedLeague }) {
                 />
                 <p className="text-[1.7vh]">{match.homeTeam.name}</p>
               </div>
-              <div className="flex items-center gap-[2vh] mt-[1vh]">
+              <div
+                onClick={() => {
+                  navigate(`/team/${match.awayTeam.id}`);
+                }}
+                className="cursor-pointer flex items-center gap-[2vh] mt-[1vh]"
+              >
                 <img
                   src={match.awayTeam.logo}
                   alt=""

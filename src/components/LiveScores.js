@@ -1,32 +1,71 @@
 import React, { useEffect, useState } from "react";
 import LiveMatch from "./LiveMatch";
 import { xxx } from "./xx.js";
-//import { topLeagues_str, getMatchs } from "../services/apiFootballServices.js";
+import { useNavigate } from "react-router-dom";
+//import {topLeagues_str,getLiveMatchs} from "../services/apiFootballServices.js";
 
 function LiveScores() {
-  const [matchs, setMatchs] = useState([]);
-
+  const [groupedMatchs, setGroupedMatchs] = useState({});
+  const navigate = useNavigate();
   useEffect(() => {
-    //async function fetchData() {
-    //  const data = await getMatchs(topLeagues_str);
-    //  console.log("Veri Alındı");
-    //  setMatchs(data);
-    //}
-//
-    //fetchData();
-    //const interval = setInterval(() => {
+    //  async function fetchData() {
+    //    const data = await getLiveMatchs(topLeagues_str);
+    //    console.log("data" ,data)
+    //    setGroupedMatchs(data);
+    //  }
+    //
     //  fetchData();
-    //}, 60000); // 60.000 ms = 60 saniye
-//
-    //return () => clearInterval(interval);
-    setMatchs(xxx);
+    //  const interval = setInterval(() => {
+    //    fetchData();
+    //  }, 60000); // 60.000 ms = 60 saniye
+    //
+    //  return () => clearInterval(interval);
+    const grouped = xxx.reduce((acc, match) => {
+      const leagueId = match.league.league_id;
+
+      if (!acc[leagueId]) {
+        acc[leagueId] = {
+          league: match.league,
+          matches: [],
+        };
+      }
+
+      acc[leagueId].matches.push(match);
+      return acc;
+    }, {});
+
+    setGroupedMatchs(grouped);
   }, []);
 
   return (
-    <div className="w-full flex justify-center ">
-      <div className="snap-y grid grid-cols-1 grid-cols-2 gap-[2vh] p-[2vh] max-h-[50vh] w-full overflow-y-auto">
-        {matchs.map((item) => (
-          <LiveMatch key={item.fixture_id} match={item} />
+    <div className="w-full flex justify-center">
+      <div className="w-full max-h-[50vh] overflow-y-auto p-[2vh] space-y-[3vh]">
+        {Object.values(groupedMatchs).map((leagueGroup) => (
+          <div key={leagueGroup.league.league_id}>
+            {/* LEAGUE HEADER */}
+            <div
+              onClick={() => {
+                navigate(`/league/${leagueGroup.league.league_id}`);
+              }}
+              className="flex items-center gap-[1vh] mb-[1.5vh] cursor-pointer w-fit"
+            >
+              <img
+                src={leagueGroup.league.league_logo}
+                alt={leagueGroup.league.league_name}
+                className="w-[3vh] h-[3vh]"
+              />
+              <h2 className="text-white font-bold text-[2vh]">
+                {leagueGroup.league.league_name}
+              </h2>
+            </div>
+
+            {/* MATCHES */}
+            <div className="grid grid-cols-1 gap-[1.5vh]">
+              {leagueGroup.matches.map((match) => (
+                <LiveMatch key={match.fixture_id} match={match} />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>

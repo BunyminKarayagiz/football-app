@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Ranks from "./Ranks";
 import { league_info, ranks } from "./xx";
 //import { getLeaugue } from "../services/apiFootballServices";
+import { useNavigate } from "react-router-dom";
 
 function LeagueInfo({ selectedLeague, selectedSeason }) {
   const [leagueInfo, setLeagueInfo] = useState({});
@@ -9,7 +10,7 @@ function LeagueInfo({ selectedLeague, selectedSeason }) {
   const [boolData, setBoolData] = useState(true);
   const season = selectedSeason ?? 2023; // Home sayfası season vermiyorsa 2023 kullan
   const league = selectedLeague ?? 39;
-
+  const navigate = useNavigate();
   useEffect(() => {
     // Eğer league id yoksa (henüz gelmediyse) bekle
     if (!league) return;
@@ -20,9 +21,9 @@ function LeagueInfo({ selectedLeague, selectedSeason }) {
     //async function fetchData() {
     //  try {
     //    const [leagueRes, teamRes] = await getLeaugue(league, season);
-//
+    //
     //    if (!mounted) return; // component unmount olduysa state güncelleme
-//
+    //
     //    if (!leagueRes) {
     //      // servisten boş döndüyse
     //      setBoolData(false);
@@ -41,7 +42,7 @@ function LeagueInfo({ selectedLeague, selectedSeason }) {
     //    setTeams([]);
     //  }
     //}
-//
+    //
     //fetchData();
     setLeagueInfo(league_info);
     setTeams(ranks);
@@ -52,9 +53,16 @@ function LeagueInfo({ selectedLeague, selectedSeason }) {
   }, [league, season]); // bağımlılıklar derived (computed) değişkenler
 
   return boolData ? (
-    <div className="w-full bg-[#1B1F24] rounded-xl p-[2vh] mt-[3vh] shadow-lg border border-[.1vh] border-gray-700">
+    <div className="w-full rounded-xl p-[2vh] mt-[3vh] shadow-lg border border-[.1vh] border-gray-700">
       <div className="text-white mb-[2vh]">
-        <h2 className="text-[2.5vh] font-bold">{leagueInfo.league_name}</h2>
+        <h2
+          onClick={() => {
+            navigate(`/league/${leagueInfo.id}`);
+          }}
+          className="cursor-pointer text-[2.5vh] font-bold inline-block"
+        >
+          {leagueInfo.league_name}
+        </h2>
         <h3 className="text-[2vh] text-gray-400">{leagueInfo.country}</h3>
       </div>
 

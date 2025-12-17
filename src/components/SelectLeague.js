@@ -1,7 +1,8 @@
 import { topLeagues } from "../services/apiFootballServices";
 import { IoChevronDown } from "react-icons/io5";
-
+import { useNavigate } from "react-router-dom";
 function SelectLeague({ selectedLeague, setLeague }) {
+  const navigate = useNavigate();
   if (!selectedLeague) {
     selectedLeague = 39;
   }
@@ -14,8 +15,11 @@ function SelectLeague({ selectedLeague, setLeague }) {
                    backdrop-blur-md shadow-sm hover:bg-white/10 transition pr-[2vh]"
       >
         <img
+          onClick={() => {
+            navigate(`/league/${current.id}`);
+          }}
           src={current.flag}
-          className="w-[2.5vh] h-[2.5vh] rounded-md shadow"
+          className="cursor-pointer w-[2.5vh] h-[2.5vh] rounded-md shadow"
           alt=""
         />
 

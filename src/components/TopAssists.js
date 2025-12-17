@@ -5,10 +5,11 @@ import { TbSoccerField } from "react-icons/tb";
 import { GoGoal } from "react-icons/go";
 import { xxtopAssists } from "./xx";
 //import { getTopAssists } from "../services/apiFootballServices";
+import { useNavigate } from "react-router-dom";
 
 function TopAssists({ selectedLeagueSeason, selectedLeagueId }) {
   const [topAssists, setTopAssists] = useState([]);
-
+  const navigate = useNavigate();
   const season = selectedLeagueSeason ?? 2023;
   const league = selectedLeagueId ?? 39;
 
@@ -41,16 +42,30 @@ function TopAssists({ selectedLeagueSeason, selectedLeagueId }) {
         {topAssists.map((s, i) => (
           <div
             key={i}
-            className="snap-start grid grid-cols-[3vh_4vh_1fr_9vh_4vh_6vh_6vh] 
+            className="snap-start grid grid-cols-[3vh_1fr_9vh_4vh_6vh_6vh] 
                        p-[1vh] border border-[.1vh] border-[#374151] rounded-[2vh] 
                        mt-[.6vh] bg-[#232830] hover:bg-[#2c323a] 
                        gap-[1vh] text-[1.6vh] place-items-center"
           >
             <p className="font-bold">{i + 1}.</p>
-            <img src={s.player.photo} alt={s.player.name} />
-            <p className="justify-self-start">{s.player.name}</p>
+            <div
+              onClick={() => {
+                navigate(`/player/${s.player.id}`);
+              }}
+              className="cursor-pointer flex h-[4vh] gap-[2vh] justify-self-start"
+            >
+              <img src={s.player.photo} alt={s.player.name} />
+              <p className="content-center">{s.player.name}</p>
+            </div>
             <p className="mr-[2.5vh]">{s.player.age}</p>
-            <img className="mr-[1.5vh]" src={s.team.logo} alt={s.team.name} />
+            <img
+              onClick={() => {
+                navigate(`/team/${s.team.id}`);
+              }}
+              className="cursor-pointer mr-[1.5vh]"
+              src={s.team.logo}
+              alt={s.team.name}
+            />
             <p>{s.statistics.appearences}</p>
             <p>{s.statistics.goal}</p>
           </div>

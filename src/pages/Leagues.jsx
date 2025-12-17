@@ -3,7 +3,7 @@ import React from 'react'
 function Leagues() {
 
   return (
-    <div>Team</div>
+    <div>Leagues</div>
   )
 }
 

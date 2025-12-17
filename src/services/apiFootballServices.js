@@ -78,9 +78,11 @@ export const topLeagues = [
 ];
 
 export const seasons = [
-  2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020,2021,2022,2023];
+  2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022,
+  2023,
+];
 
-export async function getMatchs(topLeagues_str) {
+export async function getLiveMatchs(topLeagues_str) {
   const matches = [];
   try {
     const response = await fetch(
@@ -117,9 +119,25 @@ export async function getMatchs(topLeagues_str) {
           league_logo: element.league.logo,
         },
       };
+      console.log("veri", matches)
       matches.push(veri);
     });
-    return matches;
+
+    const grouped = matches.reduce((acc, match) => {
+      const leagueId = match.league.league_id;
+
+      if (!acc[leagueId]) {
+        acc[leagueId] = {
+          league: match.league,
+          matches: [],
+        };
+      }
+
+      acc[leagueId].matches.push(match);
+      return acc;
+    }, {});
+    console.log(grouped)
+    return grouped;
   } catch (error) {
     console.log("Error while get leagues", error);
   }
@@ -299,10 +317,9 @@ export async function getTopScores(leagueId, season) {
     });
     return players;
   } catch (error) {
-    console.log("Top Scores Verisi Alinamadi: ", error)
+    console.log("Top Scores Verisi Alinamadi: ", error);
   }
 }
-
 
 export async function getTopAssists(leagueId, season) {
   const players = [];
@@ -339,6 +356,6 @@ export async function getTopAssists(leagueId, season) {
     });
     return players;
   } catch (error) {
-    console.log("Top Scores Verisi Alinamadi: ", error)
+    console.log("Top Scores Verisi Alinamadi: ", error);
   }
 }
